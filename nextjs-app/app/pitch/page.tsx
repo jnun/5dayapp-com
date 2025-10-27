@@ -10,7 +10,7 @@ export default function PitchPage() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 15;
+  const totalSlides = 16;
 
   // Check if already authenticated on mount
   useEffect(() => {
@@ -175,8 +175,59 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 3: User Experience First */}
+      {/* Slide 3: UI Design Showcase - MOVED UP FOR IMPACT */}
       <section className="slide alt-slide">
+        <div className="container">
+          <h2 className="section-title">See It In Action</h2>
+          <p className="stack-philosophy">These aren&apos;t mockups—they&apos;re real, working interfaces. Click to explore.</p>
+
+          <div className="ui-showcase-grid">
+            <a href="/invest" target="_blank" className="ui-showcase-card">
+              <div className="showcase-number">01</div>
+              <h3>Investment Discovery</h3>
+              <p>Browse faith-based opportunities with beautiful filtering and real-time progress tracking.</p>
+              <div className="showcase-link">
+                <span>→ Try the live demo</span>
+              </div>
+            </a>
+
+            <a href="/verify" target="_blank" className="ui-showcase-card">
+              <div className="showcase-number">02</div>
+              <h3>ID Verification Flow</h3>
+              <p>Frictionless KYC with Plaid integration—bank-grade security that feels simple.</p>
+              <div className="showcase-link">
+                <span>→ Try the live demo</span>
+              </div>
+            </a>
+
+            <a href="/sign" target="_blank" className="ui-showcase-card">
+              <div className="showcase-number">03</div>
+              <h3>Document Signing</h3>
+              <p>Professional signing experience powered by DocuSign with clear progress tracking.</p>
+              <div className="showcase-link">
+                <span>→ Try the live demo</span>
+              </div>
+            </a>
+
+            <a href="/certificate/abc123" target="_blank" className="ui-showcase-card">
+              <div className="showcase-number">04</div>
+              <h3>Blockchain Certificate</h3>
+              <p>Blockchain-verified investment certificates with permanent ownership records.</p>
+              <div className="showcase-link">
+                <span>→ Try the live demo</span>
+              </div>
+            </a>
+          </div>
+
+          <div className="solution-box" style={{ marginTop: '2rem', background: 'rgba(59, 130, 246, 0.1)', borderColor: 'rgb(59, 130, 246)' }}>
+            <h3>Production-Quality Interfaces</h3>
+            <p>Click any card above to experience the actual UI. This demonstrates our ability to ship beautiful, functional products fast.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Slide 4: User Experience First */}
+      <section className="slide">
         <div className="container">
           <h2 className="section-title">User Experience First</h2>
           <p className="stack-philosophy">Simple, intuitive flows that feel like consumer apps—but with enterprise-grade security underneath</p>
@@ -217,8 +268,8 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 4: Technology Stack */}
-      <section className="slide">
+      {/* Slide 5: Technology Stack */}
+      <section className="slide alt-slide">
         <div className="container">
           <h2 className="section-title">Strategic Technology Choices</h2>
           <p className="stack-philosophy">"Battle-tested tools that let us move fast and stay secure"</p>
@@ -276,8 +327,8 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 5: Accelerated Launch Strategy */}
-      <section className="slide alt-slide">
+      {/* Slide 6: Accelerated Launch Strategy */}
+      <section className="slide">
         <div className="container">
           <h2 className="section-title">Accelerated Launch Strategy</h2>
           <p className="stack-philosophy">"Leverage Best-in-Class Infrastructure to Ship Faster"</p>
@@ -311,8 +362,8 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 6: Competitive Advantages */}
-      <section className="slide">
+      {/* Slide 7: Competitive Advantages */}
+      <section className="slide alt-slide">
         <div className="container">
           <h2 className="section-title">Our Competitive Advantages</h2>
           <p className="moat-subtitle">Speed + Security + Innovation = Unbeatable Combination</p>
@@ -349,8 +400,8 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 7: Technical Roadmap */}
-      <section className="slide alt-slide">
+      {/* Slide 8: Technical Roadmap */}
+      <section className="slide">
         <div className="container">
           <h2 className="section-title">Technical Roadmap</h2>
           <div className="roadmap">
@@ -387,8 +438,8 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 8: Build Budget */}
-      <section className="slide">
+      {/* Slide 9: Build Budget */}
+      <section className="slide alt-slide">
         <div className="container">
           <h2 className="section-title">MVP Proof of Concept</h2>
           <p className="stack-philosophy">Estimated $300K-$500K for development + infrastructure</p>
@@ -438,8 +489,8 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 9: Build Phases */}
-      <section className="slide alt-slide">
+      {/* Slide 10: Build Phases */}
+      <section className="slide">
         <div className="container">
           <h2 className="section-title">Build Phases</h2>
           <p className="stack-philosophy">Iterative development focused on speed, security, and regulatory readiness</p>
@@ -488,8 +539,8 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 10: Development Approach */}
-      <section className="slide">
+      {/* Slide 11: Development Approach */}
+      <section className="slide alt-slide">
         <div className="container">
           <h2 className="section-title">Development Approach</h2>
           <p className="team-intro">Lean, agile development with strategic use of specialized expertise and external partners.</p>
@@ -515,8 +566,8 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 11: Technical Risk Mitigation */}
-      <section className="slide alt-slide">
+      {/* Slide 12: Technical Risk Mitigation */}
+      <section className="slide">
         <div className="container">
           <h2 className="section-title">Technical Risk Mitigation</h2>
           <div className="risk-grid">
@@ -553,8 +604,8 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 12: Regulation Timelines */}
-      <section className="slide">
+      {/* Slide 13: Regulation Timelines */}
+      <section className="slide alt-slide">
         <div className="container">
           <h2 className="section-title">Regulation Timelines</h2>
           <div className="big-stat">
@@ -605,8 +656,8 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 13: FINRA vs. SOC 2 - Understanding Compliance */}
-      <section className="slide alt-slide">
+      {/* Slide 14: FINRA vs. SOC 2 - Understanding Compliance */}
+      <section className="slide">
         <div className="container">
           <h2 className="section-title">Two Types of Compliance: Legal vs. Technical</h2>
           <p className="stack-philosophy">FINRA is our driver's license. SOC 2 is our vehicle safety report. We need both.</p>
@@ -672,8 +723,8 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 14: Closing */}
-      <section className="slide closing-slide">
+      {/* Slide 15: Closing */}
+      <section className="slide alt-slide closing-slide">
         <div className="container">
           <h2 className="section-title">Why We'll Succeed</h2>
           <div className="closing-content">
@@ -695,75 +746,11 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 15: UI Design Showcase */}
-      <section className="slide alt-slide">
-        <div className="container">
-          <h2 className="section-title">UI Design Showcase</h2>
-          <p className="stack-philosophy">Experience the actual user interfaces we&apos;ve designed for the platform</p>
-
-          <div className="ui-showcase-grid">
-            <a href="/invest" target="_blank" className="ui-showcase-card">
-              <div className="showcase-number">01</div>
-              <h3>Investment Discovery</h3>
-              <p>Browse and search faith-based investment opportunities with beautiful, intuitive filtering and real-time progress tracking.</p>
-              <div className="showcase-link">
-                <span>View Live Demo</span>
-                <GitBranch size={18} />
-              </div>
-            </a>
-
-            <a href="/verify" target="_blank" className="ui-showcase-card">
-              <div className="showcase-number">02</div>
-              <h3>ID Verification Flow</h3>
-              <p>Frictionless KYC process with Plaid integration—bank-grade security that feels simple and trustworthy.</p>
-              <div className="showcase-link">
-                <span>View Live Demo</span>
-                <GitBranch size={18} />
-              </div>
-            </a>
-
-            <a href="/sign" target="_blank" className="ui-showcase-card">
-              <div className="showcase-number">03</div>
-              <h3>Document Signing</h3>
-              <p>Professional multi-step signing experience powered by DocuSign with clear progress tracking and legal compliance.</p>
-              <div className="showcase-link">
-                <span>View Live Demo</span>
-                <GitBranch size={18} />
-              </div>
-            </a>
-
-            <a href="/notifications" target="_blank" className="ui-showcase-card">
-              <div className="showcase-number">04</div>
-              <h3>Smart Notifications</h3>
-              <p>Investment round closing alerts, milestone updates, and founder communications—all in one beautiful dashboard.</p>
-              <div className="showcase-link">
-                <span>View Live Demo</span>
-                <GitBranch size={18} />
-              </div>
-            </a>
-
-            <a href="/certificate/abc123" target="_blank" className="ui-showcase-card">
-              <div className="showcase-number">05</div>
-              <h3>Blockchain Certificate</h3>
-              <p>Stunning blockchain-verified investment certificates with permanent ownership records on Polygon zkEVM.</p>
-              <div className="showcase-link">
-                <span>View Live Demo</span>
-                <GitBranch size={18} />
-              </div>
-            </a>
-          </div>
-
-          <div className="solution-box" style={{ marginTop: '2rem' }}>
-            <h3>These Are Real, Working Interfaces</h3>
-            <p>Click any card above to experience the actual UI. These aren&apos;t mockups or prototypes—they&apos;re production-quality interfaces that demonstrate our design and development capabilities.</p>
-          </div>
-        </div>
-      </section>
 
       {/* Footer */}
       <footer className="pitch-footer">
         <div className="container">
-          <p className="footer-pages">Use arrow keys or scroll to navigate • 15 slides</p>
+          <p className="footer-pages">Use arrow keys or scroll to navigate • 16 slides</p>
         </div>
       </footer>
     </div>
