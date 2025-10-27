@@ -1,5 +1,5 @@
 import ContactForm from './components/ContactForm';
-import { Zap, Lock, TrendingUp } from 'lucide-react';
+import { Calendar, Lightbulb, Rocket, Cpu, Puzzle } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -18,10 +18,10 @@ export default function Home() {
         <div className="container hero-content">
           <div className="hero-text">
             <h1>Ship Your Next Project<br /><span className="gradient-text">In 5 Days, Not 5 Months</span></h1>
-            <p className="hero-subtitle">We build AI-powered teams that rapidly deliver enterprise-ready applications. Fast. Secure. Scalable.</p>
+            <p className="hero-subtitle">We hand-pick the hottest talent for your specific launch. Nimble. Experienced. Capable. Backed by AI tools that save time and money. No extra staff. No wasted labor. Just the perfect team for your project.</p>
             <div className="cta-buttons">
               <a href="#contact" className="btn btn-primary">Start Your Project</a>
-              <a href="#how-it-works" className="btn btn-outline">Learn More</a>
+              <a href="#how-it-works" className="btn btn-outline">How We Work</a>
             </div>
           </div>
         </div>
@@ -30,28 +30,42 @@ export default function Home() {
       {/* Features Section */}
       <section className="features" id="features">
         <div className="container">
-          <h2 className="section-title">Why Teams Choose Us</h2>
+          <h2 className="section-title">The Right Team. Zero Waste.</h2>
           <div className="features-grid">
             <div className="feature-card">
               <div className="feature-icon">
-                <Zap size={48} strokeWidth={1.5} />
+                <Lightbulb size={48} strokeWidth={1.5} />
               </div>
-              <h3>Lightning Fast</h3>
-              <p>AI-augmented development that delivers in days what traditionally takes months. No compromises on quality.</p>
+              <h3>Hand-Picked Talent</h3>
+              <p>We assemble the perfect team for your specific project. Only the people you need. Only the skills that matter.</p>
             </div>
             <div className="feature-card">
               <div className="feature-icon">
-                <Lock size={48} strokeWidth={1.5} />
+                <Rocket size={48} strokeWidth={1.5} />
               </div>
-              <h3>Enterprise Secure</h3>
-              <p>Built with security-first principles. SOC 2 compliance, penetration testing, and industry best practices baked in.</p>
+              <h3>Battle-Tested Pros</h3>
+              <p>Nimble, experienced developers who have shipped real products. We know what works because we&apos;ve done it.</p>
             </div>
             <div className="feature-card">
               <div className="feature-icon">
-                <TrendingUp size={48} strokeWidth={1.5} />
+                <Calendar size={48} strokeWidth={1.5} />
               </div>
-              <h3>Production Ready</h3>
-              <p>Not just prototypes. We ship production-grade applications with proper architecture, testing, and documentation.</p>
+              <h3>Ship Every Friday</h3>
+              <p>Weekly deliverables keep momentum high. Always see progress. Always have something to show stakeholders.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">
+                <Cpu size={48} strokeWidth={1.5} />
+              </div>
+              <h3>AI-Augmented Speed</h3>
+              <p>Latest AI tools multiply productivity without sacrificing quality. Save time and money on every sprint.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">
+                <Puzzle size={48} strokeWidth={1.5} />
+              </div>
+              <h3>Project-Specific Contract</h3>
+              <p>No extra staff. No wasted labor. Team members contracted specifically to your project, then released.</p>
             </div>
           </div>
         </div>
@@ -64,18 +78,18 @@ export default function Home() {
           <div className="steps">
             <div className="step">
               <div className="step-number">01</div>
-              <h3>Discovery Call</h3>
-              <p>We understand your requirements, timeline, and success criteria in a focused 60-minute session.</p>
+              <h3>Assemble Your Team</h3>
+              <p>We hand-pick the perfect mix of talent for your specific project. The right skills. The right experience. Nothing more, nothing less.</p>
             </div>
             <div className="step">
               <div className="step-number">02</div>
-              <h3>AI-Powered Build</h3>
-              <p>Our expert team leverages cutting-edge AI tools to rapidly develop your application with precision.</p>
+              <h3>Plan & Execute Weekly</h3>
+              <p>Every Monday we plan Friday&apos;s deliverable. AI-augmented development with battle-tested pros building at startup speed.</p>
             </div>
             <div className="step">
               <div className="step-number">03</div>
-              <h3>Iterate & Deploy</h3>
-              <p>Daily check-ins, rapid iterations, and seamless deployment to your production environment.</p>
+              <h3>Ship Every Friday</h3>
+              <p>Weekly demos you can see, test, and share. When the project is done, the team disbands. No bloat. No waste.</p>
             </div>
           </div>
         </div>
@@ -110,8 +124,8 @@ export default function Home() {
       <section className="cta-section" id="contact">
         <div className="container">
           <div className="cta-content">
-            <h2>Ready to Ship Fast?</h2>
-            <p>Let&apos;s discuss your project and how we can deliver it in record time.</p>
+            <h2>Start Shipping This Friday</h2>
+            <p>Let&apos;s plan your first weekly demo and get momentum building.</p>
             <ContactForm />
           </div>
         </div>
