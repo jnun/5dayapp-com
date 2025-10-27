@@ -1,20 +1,52 @@
 // Password protection
-// Change this to your desired password
 const CORRECT_PASSWORD = 'faith2025';
-
-// Max login attempts
 const MAX_ATTEMPTS = 5;
+const SESSION_KEY = 'pitch_authenticated';
 let attempts = 0;
 
-// Session storage key
-const SESSION_KEY = 'pitch_authenticated';
-
-// Check if already authenticated in this session
-window.addEventListener('DOMContentLoaded', () => {
+// Consolidated initialization
+document.addEventListener('DOMContentLoaded', () => {
+    // Check authentication
     const isAuthenticated = sessionStorage.getItem(SESSION_KEY);
-
     if (isAuthenticated === 'true') {
         unlockContent();
+        addAccessTimestamp();
+    }
+
+    // Setup smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Content protection
+    const protectedContent = document.getElementById('protected-content');
+    if (protectedContent) {
+        // Disable right-click
+        protectedContent.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            return false;
+        });
+
+        // Disable dev tools shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (
+                e.key === 'F12' ||
+                (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+                (e.ctrlKey && e.key === 'U')
+            ) {
+                e.preventDefault();
+                return false;
+            }
+        });
     }
 });
 
@@ -26,24 +58,21 @@ function checkPassword(event) {
     const enteredPassword = passwordInput.value;
 
     if (enteredPassword === CORRECT_PASSWORD) {
-        // Correct password
         sessionStorage.setItem(SESSION_KEY, 'true');
         unlockContent();
+        addAccessTimestamp();
     } else {
-        // Incorrect password
         attempts++;
 
         if (attempts >= MAX_ATTEMPTS) {
-            errorMessage.textContent = 'Too many failed attempts. Please contact the administrator.';
+            errorMessage.textContent = 'Too many failed attempts. Please refresh and try again.';
             passwordInput.disabled = true;
             document.querySelector('.btn-unlock').disabled = true;
         } else {
             errorMessage.textContent = `Incorrect password. ${MAX_ATTEMPTS - attempts} attempts remaining.`;
             passwordInput.value = '';
             passwordInput.classList.add('shake');
-            setTimeout(() => {
-                passwordInput.classList.remove('shake');
-            }, 500);
+            setTimeout(() => passwordInput.classList.remove('shake'), 500);
         }
     }
 
@@ -54,22 +83,28 @@ function unlockContent() {
     const passwordGate = document.getElementById('password-gate');
     const protectedContent = document.getElementById('protected-content');
 
-    // Fade out password gate
     passwordGate.style.opacity = '0';
     passwordGate.style.transition = 'opacity 0.5s ease';
 
     setTimeout(() => {
         passwordGate.style.display = 'none';
         protectedContent.style.display = 'block';
-
-        // Animate content in
-        setTimeout(() => {
-            protectedContent.style.opacity = '1';
-        }, 50);
+        setTimeout(() => protectedContent.style.opacity = '1', 50);
     }, 500);
 }
 
-// Add shake animation for incorrect password
+function addAccessTimestamp() {
+    const footer = document.querySelector('.pitch-footer .container');
+    if (footer && !footer.querySelector('.access-timestamp')) {
+        const accessInfo = document.createElement('div');
+        accessInfo.className = 'access-timestamp';
+        accessInfo.style.cssText = 'text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2); font-size: 0.75rem; color: rgba(255,255,255,0.5);';
+        accessInfo.textContent = `Document accessed: ${new Date().toLocaleString()}`;
+        footer.appendChild(accessInfo);
+    }
+}
+
+// Add animations via CSS injection (cleaner than inline)
 const style = document.createElement('style');
 style.textContent = `
     @keyframes shake {
@@ -89,60 +124,3 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
-
-// Smooth scroll for any internal links
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-});
-
-// Prevent right-click and certain keyboard shortcuts to protect content
-document.addEventListener('DOMContentLoaded', () => {
-    const protectedContent = document.getElementById('protected-content');
-
-    if (protectedContent) {
-        // Disable right-click on protected content
-        protectedContent.addEventListener('contextmenu', (e) => {
-            e.preventDefault();
-            return false;
-        });
-
-        // Disable certain keyboard shortcuts
-        document.addEventListener('keydown', (e) => {
-            // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-            if (
-                e.key === 'F12' ||
-                (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
-                (e.ctrlKey && e.key === 'U')
-            ) {
-                e.preventDefault();
-                return false;
-            }
-        });
-    }
-});
-
-// Add watermark with timestamp
-window.addEventListener('DOMContentLoaded', () => {
-    const isAuthenticated = sessionStorage.getItem(SESSION_KEY);
-
-    if (isAuthenticated === 'true') {
-        const footer = document.querySelector('.pitch-footer .container');
-        if (footer) {
-            const accessInfo = document.createElement('div');
-            accessInfo.style.cssText = 'text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2); font-size: 0.75rem; color: rgba(255,255,255,0.5);';
-            accessInfo.textContent = `Document accessed on: ${new Date().toLocaleString()}`;
-            footer.appendChild(accessInfo);
-        }
-    }
-});

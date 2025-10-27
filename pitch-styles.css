@@ -354,53 +354,91 @@ body {
     opacity: 0.95;
 }
 
-/* Flow Diagram */
-.flow-diagram {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
+/* How It Works - Bold & Flashy */
+.how-it-works-slide {
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8eeff 100%);
 }
 
-.flow-step {
-    flex: 1;
-    text-align: center;
-    padding: 2rem 1rem;
+.flow-diagram-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.flow-card {
     background: white;
-    border-radius: 12px;
-    border: 2px solid var(--border-color);
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    text-align: center;
+    position: relative;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.flow-number {
-    width: 60px;
-    height: 60px;
-    background: var(--gradient);
-    color: white;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 700;
+.flow-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.flow-card.step-1 {
+    border-color: #3b82f6;
+}
+
+.flow-card.step-2 {
+    border-color: #8b5cf6;
+}
+
+.flow-card.step-3 {
+    border-color: #10b981;
+}
+
+.flow-card.step-4 {
+    border-color: #f59e0b;
+}
+
+.flow-icon {
+    font-size: 4rem;
     margin-bottom: 1rem;
+    line-height: 1;
 }
 
-.flow-step h4 {
-    font-size: 1.25rem;
-    margin-bottom: 0.75rem;
+.flow-step-number {
+    font-size: 0.875rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.flow-card.step-1 .flow-step-number {
+    color: #3b82f6;
+}
+
+.flow-card.step-2 .flow-step-number {
+    color: #8b5cf6;
+}
+
+.flow-card.step-3 .flow-step-number {
+    color: #10b981;
+}
+
+.flow-card.step-4 .flow-step-number {
+    color: #f59e0b;
+}
+
+.flow-card h3 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
     color: var(--text-primary);
 }
 
-.flow-step p {
-    font-size: 0.95rem;
+.flow-card p {
+    font-size: 1.05rem;
     color: var(--text-secondary);
-    line-height: 1.6;
-}
-
-.flow-arrow {
-    font-size: 2rem;
-    color: var(--primary-color);
-    flex-shrink: 0;
+    line-height: 1.7;
 }
 
 /* Technology Framework */
@@ -1097,16 +1135,9 @@ body {
     .revenue-streams,
     .moat-grid,
     .why-now-grid,
-    .roles-grid {
+    .roles-grid,
+    .flow-diagram-grid {
         grid-template-columns: 1fr;
-    }
-
-    .flow-diagram {
-        flex-direction: column;
-    }
-
-    .flow-arrow {
-        transform: rotate(90deg);
     }
 }
 
