@@ -60,148 +60,90 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 2: Technical Challenge */}
+      {/* Slide 2: Our Approach */}
       <section className="slide">
         <div className="container">
-          <h2 className="section-title">The Technical Challenge</h2>
-          <div className="big-stat">
-            <div className="stat-number">RegCF</div>
-            <div className="stat-label">Building a FINRA-registered funding portal from scratch</div>
-          </div>
-          <div className="stats-grid">
-            <div className="stat-card">
-              <div className="stat-value">18+ mos</div>
-              <div className="stat-desc">FINRA registration process timeline</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-value">SOC 2</div>
-              <div className="stat-desc">Security compliance required for financial services</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-value">7 years</div>
-              <div className="stat-desc">Document retention requirement per SEC rules</div>
-            </div>
-          </div>
-          <p className="slide-note">Building a regulated financial platform, not just a website</p>
-        </div>
-      </section>
-
-      {/* Slide 3: Engineering Constraints */}
-      <section className="slide alt-slide">
-        <div className="container">
-          <h2 className="section-title">Engineering Constraints</h2>
-          <div className="constraints-grid">
-            <div className="constraint-card">
-              <div className="constraint-icon">
-                <Shield size={32} strokeWidth={1.5} />
-              </div>
-              <h3>Regulatory Requirements</h3>
-              <ul>
-                <li>Platform must enforce RegCF investment limits automatically</li>
-                <li>Complete audit trail for every transaction and document access</li>
-                <li>Cannot hold investor funds—must integrate qualified escrow</li>
-                <li>Mandatory 21-day review period and Form C compliance</li>
-              </ul>
-            </div>
-            <div className="constraint-card">
-              <div className="constraint-icon">
-                <Lock size={32} strokeWidth={1.5} />
-              </div>
-              <h3>Security & Compliance</h3>
-              <ul>
-                <li>Bank-level KYC/AML verification on all users</li>
-                <li>AES-256 encryption + TLS 1.3 for all data</li>
-                <li>SOC 2 Type II compliance before launch</li>
-                <li>Immutable blockchain ledger for investment records</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Slide 4: Technical Architecture */}
-      <section className="slide">
-        <div className="container">
-          <h2 className="section-title">Technical Architecture</h2>
+          <h2 className="section-title">Our Approach: Speed Without Compromise</h2>
           <div className="solution-box">
-            <h3>Built for Compliance, Designed for Scale</h3>
-            <p>API-first architecture separates financial transactions from presentation, enabling seamless regulatory evolution</p>
+            <h3>Rapid Development + Enterprise Security + Delightful UX</h3>
+            <p>We&apos;ve mastered the art of shipping fast by strategically leveraging battle-tested infrastructure and modern frameworks—enabling us to focus on what matters: user experience and innovation.</p>
           </div>
           <div className="architecture-grid">
             <div className="architecture-card">
               <div className="architecture-icon">
-                <Code size={32} strokeWidth={1.5} />
+                <Zap size={32} strokeWidth={1.5} />
               </div>
-              <h3>Core Infrastructure</h3>
+              <h3>Fast to Market</h3>
               <ul>
-                <li>React frontend with real-time campaign dashboards</li>
-                <li>FastAPI backend with decoupled transaction logic</li>
-                <li>PostgreSQL with transactional integrity + audit trails</li>
-                <li>AWS SOC 2 compliant hosting + S3 document storage</li>
+                <li>Modern stack (React + FastAPI) enables rapid iteration</li>
+                <li>Pre-integrated security and compliance tools accelerate timeline</li>
+                <li>API-first design means we launch web now, expand to mobile later</li>
+                <li>Our team specializes in shipping production-grade apps in weeks, not months</li>
               </ul>
             </div>
             <div className="architecture-card">
               <div className="architecture-icon">
-                <GitBranch size={32} strokeWidth={1.5} />
+                <Shield size={32} strokeWidth={1.5} />
               </div>
-              <h3>Critical Integrations</h3>
+              <h3>Blockchain-Backed Trust</h3>
               <ul>
-                <li>Plaid: Bank verification, KYC, ACH transfers</li>
-                <li>DocuSign: Legally binding e-signatures with audit certificates</li>
-                <li>Polygon zkEVM: Immutable investment ledger</li>
-                <li>Qualified escrow partner: Third-party fund custody</li>
+                <li>Polygon zkEVM provides immutable investment records—investor confidence and regulatory compliance in one</li>
+                <li>Transparent, verifiable ledger eliminates disputes over ownership</li>
+                <li>Future-proof: positions us for secondary market and digital securities innovation</li>
+                <li>Industry-first for faith-based crowdfunding platforms</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Slide 5: How It Works */}
+      {/* Slide 3: User Experience First */}
       <section className="slide alt-slide">
         <div className="container">
-          <h2 className="section-title">How It Works</h2>
+          <h2 className="section-title">User Experience First</h2>
+          <p className="stack-philosophy">Simple, intuitive flows that feel like consumer apps—but with enterprise-grade security underneath</p>
           <div className="flow-grid">
             <div className="flow-card">
               <div className="flow-icon">
                 <FileText size={32} strokeWidth={1.5} />
               </div>
               <div className="flow-number">01</div>
-              <h3>Company Applies</h3>
-              <p>Founder submits campaign, vetted by our compliance team</p>
+              <h3>Frictionless Onboarding</h3>
+              <p>One-click KYC via Plaid. No forms, no uploads—just connect your bank and you&apos;re verified in seconds.</p>
             </div>
             <div className="flow-card">
               <div className="flow-icon">
                 <Zap size={32} strokeWidth={1.5} />
               </div>
               <div className="flow-number">02</div>
-              <h3>Campaign Goes Live</h3>
-              <p>Investors browse deals, review docs, ask questions</p>
+              <h3>Clear Campaign Pages</h3>
+              <p>Beautiful, readable investment pages with real-time progress, FAQs, and direct founder communication.</p>
             </div>
             <div className="flow-card">
               <div className="flow-icon">
                 <TrendingUp size={32} strokeWidth={1.5} />
               </div>
               <div className="flow-number">03</div>
-              <h3>Investment & Close</h3>
-              <p>Investor commits funds, signs docs, funds held in escrow</p>
+              <h3>One-Click Investing</h3>
+              <p>Choose amount, e-sign via DocuSign, done. Funds go to escrow automatically—no confusion, no delays.</p>
             </div>
             <div className="flow-card">
               <div className="flow-icon">
                 <CheckCircle size={32} strokeWidth={1.5} />
               </div>
               <div className="flow-number">04</div>
-              <h3>Securities Issued</h3>
-              <p>Company receives funds, investor gets blockchain-verified shares</p>
+              <h3>Blockchain Verification</h3>
+              <p>Instant confirmation with a blockchain-backed certificate. Investors can verify ownership anytime, anywhere.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Slide 6: Technology Stack */}
+      {/* Slide 4: Technology Stack */}
       <section className="slide">
         <div className="container">
-          <h2 className="section-title">Technology Stack</h2>
-          <p className="stack-philosophy">"Secure, Scalable, and Compliant from Day One"</p>
+          <h2 className="section-title">Strategic Technology Choices</h2>
+          <p className="stack-philosophy">"Battle-tested tools that let us move fast and stay secure"</p>
           <div className="tech-stack">
             <div className="tech-layer">
               <div className="tech-icon">
@@ -210,7 +152,7 @@ export default function PitchPage() {
               <div className="tech-content">
                 <div className="tech-label">Frontend</div>
                 <div className="tech-badge">React</div>
-                <p>Dynamic investor & founder dashboards</p>
+                <p>Industry standard with massive ecosystem—enables beautiful, responsive UX without reinventing the wheel</p>
               </div>
             </div>
             <div className="tech-layer">
@@ -220,7 +162,7 @@ export default function PitchPage() {
               <div className="tech-content">
                 <div className="tech-label">Backend</div>
                 <div className="tech-badge">Python (FastAPI)</div>
-                <p>Decoupled API architecture isolates financial transactions from presentation layer</p>
+                <p>Fastest modern Python framework—rapid API development with automatic docs and validation</p>
               </div>
             </div>
             <div className="tech-layer">
@@ -230,7 +172,7 @@ export default function PitchPage() {
               <div className="tech-content">
                 <div className="tech-label">Database</div>
                 <div className="tech-badge">PostgreSQL</div>
-                <p>Transactional integrity & audit trails</p>
+                <p>Rock-solid reliability for financial data—ACID compliance, audit trails, and proven at scale</p>
               </div>
             </div>
             <div className="tech-layer">
@@ -238,96 +180,98 @@ export default function PitchPage() {
                 <Shield size={24} strokeWidth={1.5} />
               </div>
               <div className="tech-content">
-                <div className="tech-label">Infrastructure</div>
-                <div className="tech-badge">AWS</div>
-                <p>SOC 2 compliant cloud + S3 document storage</p>
+                <div className="tech-label">Blockchain</div>
+                <div className="tech-badge">Polygon zkEVM</div>
+                <p>Immutable investment records with low costs—gives investors permanent proof of ownership</p>
               </div>
             </div>
           </div>
           <div className="integrations">
-            <h4>Critical Integrations</h4>
+            <h4>Best-in-Class Integrations</h4>
             <div className="integration-badges">
-              <span className="integration-badge">DocuSign</span>
-              <span className="integration-badge">Plaid</span>
-              <span className="integration-badge">Polygon zkEVM</span>
-              <span className="integration-badge">Escrow Partner</span>
+              <span className="integration-badge">Plaid (KYC/Banking)</span>
+              <span className="integration-badge">DocuSign (E-Signature)</span>
+              <span className="integration-badge">AWS (Infrastructure)</span>
+              <span className="integration-badge">Qualified Escrow</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Slide 7: Build Details */}
+      {/* Slide 5: Accelerated Launch Strategy */}
       <section className="slide alt-slide">
         <div className="container">
-          <h2 className="section-title">How We Build It: Architecture & Compliance</h2>
+          <h2 className="section-title">Accelerated Launch Strategy</h2>
+          <p className="stack-philosophy">"Leverage Best-in-Class Infrastructure to Ship Faster"</p>
           <div className="build-details">
             <div className="build-section">
               <div className="build-header">
-                <Users size={28} strokeWidth={1.5} />
-                <h3>Investor Onboarding & KYC</h3>
+                <Zap size={28} strokeWidth={1.5} />
+                <h3>Pre-Built Financial Infrastructure</h3>
               </div>
-              <ol className="build-steps">
-                <li><strong>Express Interest:</strong> Investor signs up for campaign updates</li>
-                <li><strong>Complete KYC:</strong> Plaid Identity verifies name, DOB, SSN, address</li>
-                <li><strong>Calculate Limits:</strong> System determines max investment per RegCF rules</li>
-                <li><strong>Legal Approval:</strong> Compliance team reviews before access granted</li>
-              </ol>
+              <ul className="build-steps">
+                <li><strong>Plaid Identity:</strong> Bank-grade KYC/AML verification out of the box—no need to build from scratch</li>
+                <li><strong>DocuSign API:</strong> Legally binding e-signatures with built-in audit trails and compliance certificates</li>
+                <li><strong>Qualified Escrow Partner:</strong> Licensed third-party fund custody—regulatory requirement handled externally</li>
+                <li><strong>AWS Compliance Suite:</strong> SOC 2 certified infrastructure, S3 with immutable storage for SEC document retention</li>
+              </ul>
             </div>
             <div className="build-section">
               <div className="build-header">
-                <FileText size={28} strokeWidth={1.5} />
-                <h3>Document Signing & Validation</h3>
+                <Code size={28} strokeWidth={1.5} />
+                <h3>Modern Development Frameworks</h3>
               </div>
-              <ol className="build-steps">
-                <li><strong>Auto-Generated Agreements:</strong> Template with investor details pre-filled</li>
-                <li><strong>DocuSign E-Signature:</strong> Legally binding with IP, timestamp, certificate</li>
-                <li><strong>Encrypted Storage:</strong> AWS S3 with 7-year retention per SEC</li>
-                <li><strong>Compliance Trail:</strong> Every action logged for regulatory audits</li>
-              </ol>
+              <ul className="build-steps">
+                <li><strong>React + FastAPI:</strong> Proven frameworks with extensive libraries—rapid feature development</li>
+                <li><strong>PostgreSQL:</strong> Battle-tested database with built-in ACID compliance for financial transactions</li>
+                <li><strong>Polygon zkEVM:</strong> Turnkey blockchain integration for immutable investment records without building custom infrastructure</li>
+                <li><strong>API-First Design:</strong> Clean separation enables web launch now, mobile apps later without rearchitecture</li>
+              </ul>
             </div>
           </div>
+          <p className="slide-note" style={{ marginTop: '2rem' }}><strong>Key Advantage:</strong> We integrate proven, audited solutions rather than reinventing the wheel—reducing time to market by months.</p>
         </div>
       </section>
 
-      {/* Slide 8: Competitive Moat */}
+      {/* Slide 6: Competitive Advantages */}
       <section className="slide">
         <div className="container">
-          <h2 className="section-title">Our Competitive Moat</h2>
-          <p className="moat-subtitle">Regulatory Compliance Is Our Competitive Advantage</p>
+          <h2 className="section-title">Our Competitive Advantages</h2>
+          <p className="moat-subtitle">Speed + Security + Innovation = Unbeatable Combination</p>
           <div className="moat-grid">
+            <div className="moat-card">
+              <div className="moat-icon">
+                <Zap size={32} strokeWidth={1.5} />
+              </div>
+              <h4>Execution Speed</h4>
+              <p>Our team ships production-ready platforms in weeks, not quarters. While competitors are still planning, we&apos;re launching.</p>
+            </div>
             <div className="moat-card">
               <div className="moat-icon">
                 <Shield size={32} strokeWidth={1.5} />
               </div>
-              <h4>FINRA Registration</h4>
-              <p>18+ month process to become a registered Funding Portal. High barrier to entry.</p>
+              <h4>Blockchain Innovation</h4>
+              <p>First faith-based crowdfunding platform with blockchain-verified investment records. Future-proof and investor-friendly.</p>
+            </div>
+            <div className="moat-card">
+              <div className="moat-icon">
+                <Users size={32} strokeWidth={1.5} />
+              </div>
+              <h4>User-Centric Design</h4>
+              <p>We obsess over UX. Complex financial processes feel simple—driving higher conversion and user satisfaction.</p>
             </div>
             <div className="moat-card">
               <div className="moat-icon">
                 <CheckCircle size={32} strokeWidth={1.5} />
               </div>
-              <h4>RegCF Compliance</h4>
-              <p>Platform enforces SEC rules: investment limits, disclosures, communication controls.</p>
-            </div>
-            <div className="moat-card">
-              <div className="moat-icon">
-                <Lock size={32} strokeWidth={1.5} />
-              </div>
-              <h4>Security Audits</h4>
-              <p>SOC 2 Type II + penetration testing before launch. Enterprise-grade from day one.</p>
-            </div>
-            <div className="moat-card">
-              <div className="moat-icon">
-                <AlertCircle size={32} strokeWidth={1.5} />
-              </div>
-              <h4>KYC/AML</h4>
-              <p>Bank-level identity verification and anti-fraud systems on all users.</p>
+              <h4>Regulatory Ready</h4>
+              <p>Built for compliance from day one—SOC 2, RegCF, FINRA requirements embedded in our architecture, not retrofitted.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Slide 9: Technical Roadmap */}
+      {/* Slide 7: Technical Roadmap */}
       <section className="slide alt-slide">
         <div className="container">
           <h2 className="section-title">Technical Roadmap</h2>
@@ -365,7 +309,7 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 10: Build Budget */}
+      {/* Slide 8: Build Budget */}
       <section className="slide">
         <div className="container">
           <h2 className="section-title">Technical Build Budget</h2>
@@ -424,7 +368,7 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 11: Build Timeline */}
+      {/* Slide 9: Build Timeline */}
       <section className="slide alt-slide">
         <div className="container">
           <h2 className="section-title">Build Timeline</h2>
@@ -473,7 +417,7 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 12: Engineering Team */}
+      {/* Slide 10: Engineering Team */}
       <section className="slide">
         <div className="container">
           <h2 className="section-title">Engineering Team Structure</h2>
@@ -504,7 +448,7 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 13: Technical Risk Mitigation */}
+      {/* Slide 11: Technical Risk Mitigation */}
       <section className="slide alt-slide">
         <div className="container">
           <h2 className="section-title">Technical Risk Mitigation</h2>
@@ -542,24 +486,79 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 14: Closing */}
+      {/* Slide 12: Regulation Timelines */}
+      <section className="slide">
+        <div className="container">
+          <h2 className="section-title">Regulation Timelines</h2>
+          <div className="big-stat">
+            <div className="stat-number">RegCF</div>
+            <div className="stat-label">Building a FINRA-registered funding portal from scratch</div>
+          </div>
+          <div className="stats-grid">
+            <div className="stat-card">
+              <div className="stat-value">18+ mos</div>
+              <div className="stat-desc">FINRA registration process timeline</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-value">SOC 2</div>
+              <div className="stat-desc">Security compliance required for financial services</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-value">7 years</div>
+              <div className="stat-desc">Document retention requirement per SEC rules</div>
+            </div>
+          </div>
+          <div className="constraints-grid" style={{ marginTop: '2rem' }}>
+            <div className="constraint-card">
+              <div className="constraint-icon">
+                <Shield size={32} strokeWidth={1.5} />
+              </div>
+              <h3>Regulatory Requirements</h3>
+              <ul>
+                <li>Platform must enforce RegCF investment limits automatically</li>
+                <li>Complete audit trail for every transaction and document access</li>
+                <li>Cannot hold investor funds—must integrate qualified escrow</li>
+                <li>Mandatory 21-day review period and Form C compliance</li>
+              </ul>
+            </div>
+            <div className="constraint-card">
+              <div className="constraint-icon">
+                <Lock size={32} strokeWidth={1.5} />
+              </div>
+              <h3>Security & Compliance</h3>
+              <ul>
+                <li>Bank-level KYC/AML verification on all users</li>
+                <li>AES-256 encryption + TLS 1.3 for all data</li>
+                <li>SOC 2 Type II compliance before launch</li>
+                <li>Immutable blockchain ledger for investment records</li>
+              </ul>
+            </div>
+          </div>
+          <p className="slide-note" style={{ marginTop: '2rem' }}>Building a regulated financial platform, not just a website</p>
+        </div>
+      </section>
+
+      {/* Slide 13: Closing */}
       <section className="slide closing-slide">
         <div className="container">
-          <h2 className="section-title">Building a Regulated Financial Platform</h2>
+          <h2 className="section-title">Why We'll Succeed</h2>
           <div className="closing-content">
             <div className="closing-section">
-              <h3>Technical Philosophy</h3>
-              <p>This isn&apos;t a website with payments—it&apos;s a FINRA-registered financial institution. Every line of code must serve compliance, security, and auditability. We&apos;re building for the long term.</p>
+              <h3>Our Unfair Advantage</h3>
+              <p>We&apos;ve mastered the art of building complex financial platforms at startup speed. While others take years to launch, we ship secure, compliant, user-friendly platforms in months—without cutting corners. This isn&apos;t just faster development; it&apos;s a fundamental competitive advantage.</p>
             </div>
             <div className="closing-section">
-              <h3>What We&apos;ve Covered</h3>
+              <h3>The Complete Package</h3>
               <ol>
-                <li>Regulatory constraints and engineering challenges</li>
-                <li>Technical architecture and compliance automation</li>
-                <li>Detailed implementation flows (KYC, escrow, documents)</li>
-                <li>Security framework and risk mitigation</li>
-                <li>Build timeline and team structure</li>
+                <li><strong>Speed:</strong> Rapid development using battle-tested frameworks and pre-built infrastructure</li>
+                <li><strong>Security:</strong> Enterprise-grade from day one—SOC 2 compliance, bank-level KYC, immutable audit trails</li>
+                <li><strong>Innovation:</strong> Blockchain-backed investment records set us apart in the crowdfunding space</li>
+                <li><strong>User Experience:</strong> Simple, intuitive flows that make complex financial processes feel effortless</li>
+                <li><strong>Regulatory Ready:</strong> Compliance designed into our architecture, not bolted on later</li>
               </ol>
+            </div>
+            <div className="closing-section" style={{ marginTop: '2rem', textAlign: 'center' }}>
+              <p style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>We don&apos;t just build platforms. We build trust—fast, secure, and blockchain-verified.</p>
             </div>
           </div>
         </div>
@@ -569,7 +568,7 @@ export default function PitchPage() {
       <footer className="pitch-footer">
         <div className="container">
           <p className="footer-confidential"><strong>CONFIDENTIAL</strong> - This document contains proprietary information. Do not distribute without written permission.</p>
-          <p className="footer-pages">Use arrow keys or scroll to navigate • 14 slides</p>
+          <p className="footer-pages">Use arrow keys or scroll to navigate • 13 slides</p>
         </div>
       </footer>
     </div>
