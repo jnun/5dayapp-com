@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Faith Powered Equity Platform - Confidential Pitch</title>
+    <link rel="stylesheet" href="pitch-styles.css">
+</head>
+<body>
+    <!-- Password Gate -->
+    <div id="password-gate" class="password-gate">
+        <div class="password-container">
+            <div class="lock-icon">🔒</div>
+            <h1>Confidential Pitch Deck</h1>
+            <p>Please enter the password to access this document</p>
+            <form id="password-form" onsubmit="return checkPassword(event)">
+                <input
+                    type="password"
+                    id="password-input"
+                    placeholder="Enter password"
+                    autocomplete="off"
+                    required
+                >
+                <button type="submit" class="btn-unlock">Unlock</button>
+            </form>
+            <div id="error-message" class="error-message"></div>
+        </div>
+    </div>
+
+    <!-- Protected Content -->
+    <div id="protected-content" class="protected-content" style="display: none;">
+        <!-- Header -->
+        <header class="pitch-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">5dayapp</div>
+                    <div class="confidential-badge">CONFIDENTIAL</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Cover Section -->
+        <section class="cover-section">
+            <div class="container">
+                <div class="cover-content">
+                    <h1 class="cover-title">Faith Powered Equity<br>Crowdfunding Platform</h1>
+                    <p class="cover-subtitle">Democratizing Early-Stage Investing for Believers</p>
+                    <div class="cover-meta">
+                        <span>CONFIDENTIAL PITCH DECK</span>
+                        <span>•</span>
+                        <span>SEED ROUND</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="pitch-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">01</span>
+                    <h2>Our Mission: What We Need to Do</h2>
+                </div>
+                <div class="mission-statement">
+                    <h3>Democratize early-stage investing</h3>
+                </div>
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h4>The Problem</h4>
+                        <p>Believers need a simplified way for people to put their money where their faith is.</p>
+                    </div>
+                    <div class="content-card">
+                        <h4>The Solution</h4>
+                        <p>We are building a secure, compliant, and user-friendly platform that directly connects Founders with aligned Investors.</p>
+                    </div>
+                    <div class="content-card">
+                        <h4>The Path</h4>
+                        <p>Companies can raise capital in exchange for securities (equity, debt) from their communities and the public, all in compliance with SEC regulations.</p>
+                    </div>
+                    <div class="content-card">
+                        <h4>The Opportunity</h4>
+                        <p>We capture a significant share of the growing online private investment market by allowing people to invest in their passions, in people who share their values.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Execution Stages Section -->
+        <section class="pitch-section alt-bg">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">02</span>
+                    <h2>Our Execution Stages</h2>
+                </div>
+                <p class="section-intro">We are executing this plan in distinct, milestone-driven stages. Our seed round is designed to get us through Stage 2.</p>
+
+                <div class="stages">
+                    <div class="stage-card">
+                        <div class="stage-badge">Stage 1</div>
+                        <h3>Foundation</h3>
+                        <p class="stage-status">Pre-Seed/Current</p>
+                        <div class="stage-goal">
+                            <strong>Goal:</strong> Establish legal and compliance foundation.
+                        </div>
+                        <div class="stage-activities">
+                            <strong>Key Activities:</strong>
+                            <ul>
+                                <li>Retain specialized securities counsel</li>
+                                <li>File for FINRA Funding Portal registration</li>
+                                <li>Select key API partners (Escrow, KYC/AML)</li>
+                                <li>Finalize product scope and architecture</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="stage-card highlight">
+                        <div class="stage-badge primary">Stage 2</div>
+                        <h3>MVP Build</h3>
+                        <p class="stage-status">Seed Round Target</p>
+                        <div class="stage-goal">
+                            <strong>Goal:</strong> Build, test, and audit the core platform (MVP).
+                        </div>
+                        <div class="stage-partners">
+                            <strong>Early Partners:</strong> Allow aligned investors to experience the platform on early, hand picked companies.
+                        </div>
+                        <div class="stage-activities">
+                            <strong>Key Activities:</strong>
+                            <ul>
+                                <li>Build full end-to-end investment flow</li>
+                                <li>Campaign creation to e-signature and fund transfer</li>
+                                <li>Complete rigorous security/compliance audits</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="stage-card">
+                        <div class="stage-badge">Stage 3</div>
+                        <h3>Fully Featured Launch</h3>
+                        <p class="stage-status">Future</p>
+                        <div class="stage-goal">
+                            <strong>Goal:</strong> Successfully launch large believer based investor network.
+                        </div>
+                        <div class="stage-activities">
+                            <strong>Key Activities:</strong>
+                            <ul>
+                                <li>Allow companies to set up raises online</li>
+                                <li>Campaign and compliance document automation</li>
+                                <li>Automate approval process</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Stack Section -->
+        <section class="pitch-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">03</span>
+                    <h2>How the App Will Be Built</h2>
+                </div>
+                <div class="philosophy">
+                    <h3>"Secure, scalable, and compliant from day one."</h3>
+                </div>
+
+                <div class="tech-stack">
+                    <h4>Technology Stack</h4>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <strong>Frontend</strong>
+                            <p>React for dynamic, responsive user dashboard</p>
+                        </div>
+                        <div class="tech-item">
+                            <strong>Backend</strong>
+                            <p>Python (FastAPI) for rapid development and FinTech security</p>
+                        </div>
+                        <div class="tech-item">
+                            <strong>Database</strong>
+                            <p>PostgreSQL for transactional integrity</p>
+                        </div>
+                        <div class="tech-item">
+                            <strong>Blockchain</strong>
+                            <p>Immutable record of investments via transactional blockchain</p>
+                        </div>
+                        <div class="tech-item">
+                            <strong>Infrastructure</strong>
+                            <p>AWS for secure, scalable cloud infrastructure and S3 storage</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="methodology">
+                    <h4>Methodology</h4>
+                    <div class="method-list">
+                        <div class="method-item">
+                            <span class="check">✓</span>
+                            <p>High-velocity Agile development with DevSecOps integrated from day one</p>
+                        </div>
+                        <div class="method-item">
+                            <span class="check">✓</span>
+                            <p>Security and compliance as foundational requirements, built into every sprint</p>
+                        </div>
+                        <div class="method-item">
+                            <span class="check">✓</span>
+                            <p>Lean 'buy, not build' philosophy for non-core functions</p>
+                        </div>
+                        <div class="method-item">
+                            <span class="check">✓</span>
+                            <p>Best-in-class third-party APIs: DocuSign (e-signatures), Plaid (KYC/ACH), Polygon ZK rollup (blockchain ledger)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Moat Section -->
+        <section class="pitch-section moat-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">04</span>
+                    <h2>Our Moat: Security & Legal Compliance</h2>
+                </div>
+                <div class="moat-intro">
+                    <p>This is the hardest part of the business and our single greatest competitive advantage. We are not just building a website; we are building a regulated financial institution.</p>
+                </div>
+
+                <div class="compliance-grid">
+                    <div class="compliance-section">
+                        <h4>Legal Mandate</h4>
+                        <div class="compliance-item">
+                            <strong>FINRA Registration</strong>
+                            <p>Must register as a Funding Portal with the SEC and FINRA before facilitating any transactions. Our seed round directly funds the legal and operational costs of this process.</p>
+                        </div>
+                        <div class="compliance-item">
+                            <strong>Regulation Compliance</strong>
+                            <p>Platform logic built to enforce Regulation Crowdfunding (Reg CF):</p>
+                            <ul>
+                                <li>Enforcing investment limits for non-accredited investors</li>
+                                <li>Mandating all required disclosures (Form C) for Founders</li>
+                                <li>Managing all communications in a compliant manner</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="compliance-section">
+                        <h4>Security Mandate</h4>
+                        <div class="compliance-item">
+                            <strong>User Verification</strong>
+                            <p>Mandatory KYC/AML checks on all users (Founders and Investors) to prevent fraud.</p>
+                        </div>
+                        <div class="compliance-item">
+                            <strong>Fund Security</strong>
+                            <p>We will never hold client funds. All funds processed directly via integrated, qualified third-party escrow agent.</p>
+                        </div>
+                        <div class="compliance-item">
+                            <strong>Data Security</strong>
+                            <p>All sensitive data encrypted at rest and in transit. Rigorous access controls (2FA, role-based access) from day one.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Audits Section -->
+        <section class="pitch-section alt-bg">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">05</span>
+                    <h2>Required Audits & Certifications</h2>
+                </div>
+                <p class="section-intro">To build trust and ensure institutional readiness, we will pursue the following audits before our public launch (funded by the seed round):</p>
+
+                <div class="audit-cards">
+                    <div class="audit-card">
+                        <div class="audit-icon">🏛️</div>
+                        <h4>FINRA Compliance Audit</h4>
+                        <p>FINRA will audit our platform, processes, and personnel before granting our Funding Portal license. This is non-negotiable.</p>
+                    </div>
+                    <div class="audit-card">
+                        <div class="audit-icon">🛡️</div>
+                        <h4>External Penetration Test</h4>
+                        <p>Third-party security firm will conduct a full penetration test to identify and remediate vulnerabilities.</p>
+                    </div>
+                    <div class="audit-card">
+                        <div class="audit-icon">⭐</div>
+                        <h4>SOC 2 Type II Report</h4>
+                        <p>Gold standard for FinTech. Begin certification during MVP build to demonstrate commitment to security, availability, and confidentiality.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roadmap Section -->
+        <section class="pitch-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">06</span>
+                    <h2>Product Roadmap: From Seed to Series A</h2>
+                </div>
+                <p class="section-intro">Our seed round is focused on launching a secure, compliant, and functional core product. Our Series A will be for scaling and feature expansion.</p>
+
+                <div class="roadmap">
+                    <div class="roadmap-stage">
+                        <div class="roadmap-header">
+                            <h3>The "Bootstrap" Version</h3>
+                            <span class="roadmap-badge">Seed Round Goal - MVP</span>
+                        </div>
+                        <p class="roadmap-desc">The MVP is a fully-compliant platform focused on one thing: executing a Reg CF raise from start to finish.</p>
+
+                        <div class="roadmap-features">
+                            <div class="feature-group">
+                                <h5>For Founders</h5>
+                                <p>Simple wizard to build a campaign page, upload legal documents, and track committed funds.</p>
+                            </div>
+                            <div class="feature-group">
+                                <h5>For Investors</h5>
+                                <p>Browse deals, review compliance documents (secure data room), e-sign subscription agreement, and transfer funds to escrow.</p>
+                            </div>
+                            <div class="feature-group">
+                                <h5>For Admin</h5>
+                                <p>Robust back-end to vet and approve campaigns, manage user KYC/AML status, and monitor all transactions for compliance.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-stage future">
+                        <div class="roadmap-header">
+                            <h3>The "Robust" Version</h3>
+                            <span class="roadmap-badge">Series A Goal - Scale</span>
+                        </div>
+                        <p class="roadmap-desc">Once the core model is proven, we will use future funding to build a market-leading platform.</p>
+
+                        <div class="roadmap-features">
+                            <div class="feature-group">
+                                <h5>Secondary Market</h5>
+                                <p>The #1 requested feature. A fully-compliant Alternative Trading System (ATS) for investors to trade their shares, providing crucial liquidity.</p>
+                            </div>
+                            <div class="feature-group">
+                                <h5>Mobile-First App</h5>
+                                <p>Dedicated native app (iOS/Android) for investors to discover, research, and manage their portfolios.</p>
+                            </div>
+                            <div class="feature-group">
+                                <h5>Advanced Investor Tools</h5>
+                                <p>Portfolio analytics, diversification wizards, and AI-driven deal recommendations.</p>
+                            </div>
+                            <div class="feature-group">
+                                <h5>Expansion</h5>
+                                <p>New investment types (real estate, collectibles) and support for other regulations (Reg D, Reg A+).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="pitch-footer">
+            <div class="container">
+                <div class="footer-confidential">
+                    <p><strong>CONFIDENTIAL</strong> - This document contains proprietary and confidential information. Do not distribute without written permission.</p>
+                </div>
+                <div class="footer-contact">
+                    <p>For more information, contact: <a href="mailto:hello@5dayapp.com">hello@5dayapp.com</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="pitch-script.js"></script>
+</body>
+</html>
