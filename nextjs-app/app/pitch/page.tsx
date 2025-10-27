@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Lock, Shield, Database, Server, Code, FileText, Users, Zap, CheckCircle, TrendingUp, AlertCircle, GitBranch } from 'lucide-react';
 import './pitch.css';
 
@@ -8,6 +8,8 @@ export default function PitchPage() {
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const totalSlides = 13;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -18,6 +20,32 @@ export default function PitchPage() {
       setError('Incorrect password');
     }
   };
+
+  useEffect(() => {
+    if (!isUnlocked) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+        e.preventDefault();
+        setCurrentSlide((prev) => Math.min(prev + 1, totalSlides - 1));
+      } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        setCurrentSlide((prev) => Math.max(prev - 1, 0));
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isUnlocked]);
+
+  useEffect(() => {
+    if (!isUnlocked) return;
+
+    const slides = document.querySelectorAll('.slide');
+    if (slides[currentSlide]) {
+      slides[currentSlide].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [currentSlide, isUnlocked]);
 
   if (!isUnlocked) {
     return (
@@ -54,8 +82,6 @@ export default function PitchPage() {
           <p className="cover-subtitle">Faith Powered Equity Crowdfunding Platform</p>
           <div className="cover-meta">
             <span>TECHNICAL BUILD OVERVIEW</span>
-            <span>•</span>
-            <span>CONFIDENTIAL</span>
           </div>
         </div>
       </section>
@@ -313,56 +339,57 @@ export default function PitchPage() {
       <section className="slide">
         <div className="container">
           <h2 className="section-title">Technical Build Budget</h2>
+          <p className="stack-philosophy">Estimated $250K-$500K for complete technical platform</p>
           <div className="budget-breakdown">
             <div className="budget-item">
               <div className="budget-header">
-                <h4>Engineering Team</h4>
-                <span className="budget-percent">35%</span>
+                <h4>Core Platform Development</h4>
+                <span className="budget-percent">$120K-$200K</span>
               </div>
               <div className="budget-bar">
-                <div className="budget-fill" style={{ width: '35%' }}></div>
+                <div className="budget-fill" style={{ width: '45%' }}></div>
               </div>
-              <p>CTO + 2-3 full-stack engineers</p>
-            </div>
-            <div className="budget-item">
-              <div className="budget-header">
-                <h4>Legal & Compliance</h4>
-                <span className="budget-percent">30%</span>
-              </div>
-              <div className="budget-bar">
-                <div className="budget-fill" style={{ width: '30%' }}></div>
-              </div>
-              <p>Securities counsel, FINRA registration, Head of Compliance</p>
+              <p>Full-stack development: investor/founder dashboards, campaign flows, user management, real-time analytics</p>
             </div>
             <div className="budget-item">
               <div className="budget-header">
                 <h4>Infrastructure & Integrations</h4>
-                <span className="budget-percent">20%</span>
+                <span className="budget-percent">$60K-$120K</span>
+              </div>
+              <div className="budget-bar">
+                <div className="budget-fill" style={{ width: '25%' }}></div>
+              </div>
+              <p>AWS hosting, Plaid KYC, DocuSign API, escrow integration, Polygon blockchain, database setup</p>
+            </div>
+            <div className="budget-item">
+              <div className="budget-header">
+                <h4>Security & Compliance Systems</h4>
+                <span className="budget-percent">$40K-$80K</span>
               </div>
               <div className="budget-bar">
                 <div className="budget-fill" style={{ width: '20%' }}></div>
               </div>
-              <p>AWS, Plaid, DocuSign, escrow, SOC 2 audit, pentest</p>
+              <p>SOC 2 Type II audit, penetration testing, security hardening, compliance automation tools</p>
             </div>
             <div className="budget-item">
               <div className="budget-header">
-                <h4>Operations</h4>
-                <span className="budget-percent">10%</span>
+                <h4>Testing & QA</h4>
+                <span className="budget-percent">$20K-$50K</span>
               </div>
               <div className="budget-bar">
                 <div className="budget-fill" style={{ width: '10%' }}></div>
               </div>
-              <p>Insurance, accounting, corporate setup</p>
+              <p>Automated testing suite, beta testing infrastructure, bug fixes, performance optimization</p>
             </div>
             <div className="budget-item">
               <div className="budget-header">
-                <h4>Contingency</h4>
-                <span className="budget-percent">5%</span>
+                <h4>Legal & Compliance</h4>
+                <span className="budget-percent">Separate Budget</span>
               </div>
               <div className="budget-bar">
-                <div className="budget-fill" style={{ width: '5%' }}></div>
+                <div className="budget-fill" style={{ width: '0%', backgroundColor: '#ccc' }}></div>
               </div>
-              <p>Buffer for regulatory or technical surprises</p>
+              <p>Securities counsel, FINRA registration, compliance personnel (handled separately from technical build)</p>
             </div>
           </div>
         </div>
@@ -417,34 +444,30 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 10: Engineering Team */}
+      {/* Slide 10: Development Approach */}
       <section className="slide">
         <div className="container">
-          <h2 className="section-title">Engineering Team Structure</h2>
-          <p className="team-intro">Building a FinTech platform requires specialized expertise across engineering, security, and compliance.</p>
+          <h2 className="section-title">Development Approach</h2>
+          <p className="team-intro">Lean, agile development with strategic use of specialized expertise and external partners.</p>
           <div className="team-grid">
             <div className="team-card">
-              <h4>CTO / Technical Founder</h4>
-              <p>System architecture, technical strategy, security design, team leadership</p>
+              <h4>Core Development Team</h4>
+              <p>Full-stack developers handling frontend (React), backend (FastAPI), database architecture, and API integrations</p>
             </div>
             <div className="team-card">
-              <h4>Senior Full-Stack Engineer #1</h4>
-              <p>Backend (FastAPI), database design, API architecture, integrations</p>
+              <h4>Security & Infrastructure</h4>
+              <p>DevSecOps expertise for AWS setup, CI/CD pipelines, security hardening, and ongoing infrastructure management</p>
             </div>
             <div className="team-card">
-              <h4>Senior Full-Stack Engineer #2</h4>
-              <p>Frontend (React), investor/founder UX, real-time dashboards</p>
+              <h4>External Specialists</h4>
+              <p>SOC 2 auditors, penetration testing firms, securities counsel for regulatory guidance</p>
             </div>
             <div className="team-card">
-              <h4>DevSecOps Engineer</h4>
-              <p>AWS infrastructure, CI/CD, security hardening, SOC 2 compliance</p>
-            </div>
-            <div className="team-card">
-              <h4>Head of Compliance</h4>
-              <p>RegCF expertise, FINRA liaison, legal coordination, audit management</p>
+              <h4>Integration Partners</h4>
+              <p>Plaid (KYC/banking), DocuSign (e-signature), qualified escrow provider, Polygon (blockchain)</p>
             </div>
           </div>
-          <p className="team-note"><strong>External Partners:</strong> Securities counsel, SOC 2 auditor, penetration testing firm, escrow provider.</p>
+          <p className="team-note"><strong>Strategy:</strong> Build fast with a lean core team, augmented by best-in-class third-party services and consultants.</p>
         </div>
       </section>
 
@@ -557,9 +580,6 @@ export default function PitchPage() {
                 <li><strong>Regulatory Ready:</strong> Compliance designed into our architecture, not bolted on later</li>
               </ol>
             </div>
-            <div className="closing-section" style={{ marginTop: '2rem', textAlign: 'center' }}>
-              <p style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>We don&apos;t just build platforms. We build trust—fast, secure, and blockchain-verified.</p>
-            </div>
           </div>
         </div>
       </section>
@@ -567,7 +587,6 @@ export default function PitchPage() {
       {/* Footer */}
       <footer className="pitch-footer">
         <div className="container">
-          <p className="footer-confidential"><strong>CONFIDENTIAL</strong> - This document contains proprietary information. Do not distribute without written permission.</p>
           <p className="footer-pages">Use arrow keys or scroll to navigate • 13 slides</p>
         </div>
       </footer>
