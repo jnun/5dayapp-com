@@ -90,6 +90,14 @@ export default function SignPage() {
 
   return (
     <div className="sign-page">
+      {/* Back to Pitch Link */}
+      <div className="back-to-pitch">
+        <a href="/pitch" className="back-link">
+          <ArrowLeft size={20} />
+          <span>Back to Pitch</span>
+        </a>
+      </div>
+
       <div className="sign-container">
         {/* Progress Steps */}
         <div className="progress-steps">

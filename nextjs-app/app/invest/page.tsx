@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Search, TrendingUp, Heart, Users, DollarSign, Clock, ChevronRight, Filter } from 'lucide-react';
+import { Search, TrendingUp, Heart, Users, DollarSign, Clock, ChevronRight, Filter, ArrowLeft } from 'lucide-react';
 import DemoModal from '../components/DemoModal';
 import './invest.css';
 
@@ -87,6 +87,14 @@ export default function InvestPage() {
 
   return (
     <div className="invest-page">
+      {/* Back to Pitch Link */}
+      <div className="back-to-pitch">
+        <a href="/pitch" className="back-link">
+          <ArrowLeft size={20} />
+          <span>Back to Pitch</span>
+        </a>
+      </div>
+
       {/* Hero Section */}
       <section className="invest-hero">
         <div className="container">

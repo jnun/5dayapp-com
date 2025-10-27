@@ -36,9 +36,14 @@ export default function DemoModal({ isOpen, onClose, title, message, suggestions
             </div>
           )}
 
-          <button className="demo-modal-button" onClick={onClose}>
-            Got it, thanks!
-          </button>
+          <div className="demo-modal-buttons">
+            <button className="demo-modal-button" onClick={onClose}>
+              Got it, thanks!
+            </button>
+            <a href="/pitch" className="demo-modal-link">
+              Back to pitch
+            </a>
+          </div>
         </div>
       </div>
     </div>

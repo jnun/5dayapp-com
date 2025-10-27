@@ -179,7 +179,7 @@ export default function PitchPage() {
       <section className="slide alt-slide">
         <div className="container">
           <h2 className="section-title">See It In Action</h2>
-          <p className="stack-philosophy">These aren&apos;t mockups—they&apos;re real, working interfaces. Click to explore.</p>
+          <p className="stack-philosophy">Experience what the app will feel like.</p>
 
           <div className="ui-showcase-grid">
             <a href="/invest" target="_blank" className="ui-showcase-card">

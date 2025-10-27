@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Bell, TrendingUp, CheckCircle, Clock, DollarSign, Users, Calendar, ArrowRight, X } from 'lucide-react';
+import { Bell, TrendingUp, CheckCircle, Clock, DollarSign, Users, Calendar, ArrowRight, X, ArrowLeft } from 'lucide-react';
 import DemoModal from '../components/DemoModal';
 import './notifications.css';
 
@@ -142,6 +142,14 @@ export default function NotificationsPage() {
 
   return (
     <div className="notifications-page">
+      {/* Back to Pitch Link */}
+      <div className="back-to-pitch">
+        <a href="/pitch" className="back-link">
+          <ArrowLeft size={20} />
+          <span>Back to Pitch</span>
+        </a>
+      </div>
+
       <div className="notifications-container">
         {/* Header */}
         <div className="notifications-header">

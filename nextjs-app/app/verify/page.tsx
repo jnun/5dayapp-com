@@ -41,6 +41,14 @@ export default function VerifyPage() {
 
   return (
     <div className="verify-page">
+      {/* Back to Pitch Link */}
+      <div className="back-to-pitch">
+        <a href="/pitch" className="back-link">
+          <ArrowLeft size={20} />
+          <span>Back to Pitch</span>
+        </a>
+      </div>
+
       <div className="verify-container">
         {currentStep === 'intro' && <IntroStep onNext={handleStartVerification} onShowModal={handleShowModal} />}
         {currentStep === 'plaid' && <PlaidStep onConnect={handlePlaidConnect} onBack={handleBack} />}

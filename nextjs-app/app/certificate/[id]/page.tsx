@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
-import { Shield, Download, Share2, CheckCircle, ExternalLink, Copy, FileText, Calendar, DollarSign, Hash, Lock } from 'lucide-react';
+import { useState, use } from 'react';
+import { Shield, Download, Share2, CheckCircle, ExternalLink, Copy, FileText, Calendar, DollarSign, Hash, Lock, ArrowLeft } from 'lucide-react';
+import DemoModal from '../../components/DemoModal';
 import './certificate.css';
 
 interface CertificateData {
@@ -19,13 +20,15 @@ interface CertificateData {
   verified: boolean;
 }
 
-export default function CertificatePage({ params }: { params: { id: string } }) {
+export default function CertificatePage({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = use(params);
   const [copied, setCopied] = useState(false);
   const [shareOpen, setShareOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   // Mock data - in real app, this would be fetched based on params.id
   const certificate: CertificateData = {
-    id: params.id,
+    id: resolvedParams.id,
     company: 'Faith Forward Coffee',
     investorName: 'John Anderson',
     investmentAmount: 5000,
@@ -58,6 +61,14 @@ export default function CertificatePage({ params }: { params: { id: string } }) 
 
   return (
     <div className="certificate-page">
+      {/* Back to Pitch Link */}
+      <div className="back-to-pitch">
+        <a href="/pitch" className="back-link">
+          <ArrowLeft size={20} />
+          <span>Back to Pitch</span>
+        </a>
+      </div>
+
       <div className="certificate-container">
         {/* Header Actions */}
         <div className="certificate-actions">
@@ -184,15 +195,13 @@ export default function CertificatePage({ params }: { params: { id: string } }) 
                   </div>
                 </div>
 
-                <a
-                  href={blockchainUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => setShowModal(true)}
                   className="blockchain-link"
                 >
                   View on Blockchain Explorer
                   <ExternalLink size={16} />
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -250,12 +259,12 @@ export default function CertificatePage({ params }: { params: { id: string } }) 
 
         {/* Action Buttons */}
         <div className="bottom-actions">
-          <button onClick={() => window.location.href = '/invest'} className="btn btn-primary">
+          <a href="/invest" className="btn btn-primary">
             Browse More Opportunities
-          </button>
-          <button onClick={() => window.location.href = '/notifications'} className="btn btn-outline">
+          </a>
+          <a href="/notifications" className="btn btn-outline">
             View Notifications
-          </button>
+          </a>
         </div>
 
         {/* Share Modal */}
@@ -282,6 +291,19 @@ export default function CertificatePage({ params }: { params: { id: string } }) 
             </div>
           </div>
         )}
+
+        {/* Demo Modal */}
+        <DemoModal
+          isOpen={showModal}
+          onClose={() => setShowModal(false)}
+          title="Blockchain Explorer"
+          message="In the full platform, this would link to Polygon zkEVM's block explorer (PolygonScan) where you could verify this transaction on the blockchain and see its immutable record."
+          suggestions={[
+            'The transaction hash above can be used to verify the investment on any blockchain explorer',
+            'Blockchain records are permanent and cannot be altered or deleted',
+            'This provides transparent proof of ownership for all stakeholders'
+          ]}
+        />
       </div>
     </div>
   );
