@@ -9,7 +9,7 @@ export default function PitchPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 13;
+  const totalSlides = 14;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -552,7 +552,74 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 13: Closing */}
+      {/* Slide 13: FINRA vs. SOC 2 - Understanding Compliance */}
+      <section className="slide alt-slide">
+        <div className="container">
+          <h2 className="section-title">Two Types of Compliance: Legal vs. Technical</h2>
+          <p className="stack-philosophy">FINRA is our driver's license. SOC 2 is our vehicle safety report. We need both.</p>
+
+          <div className="architecture-grid" style={{ marginBottom: '3rem' }}>
+            <div className="architecture-card">
+              <div className="architecture-icon">
+                <FileText size={32} strokeWidth={1.5} />
+              </div>
+              <h3>FINRA Compliance: "What We Do"</h3>
+              <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
+                <strong>Legal & Regulatory Requirement</strong> – This IS our business. Cannot be outsourced.
+              </p>
+              <ul>
+                <li><strong>Goal:</strong> Investor protection through proper business rules</li>
+                <li><strong>Audits:</strong> Do we enforce investment limits? Display required disclosures? Follow securities law?</li>
+                <li><strong>Who checks:</strong> SEC and FINRA regulators</li>
+                <li><strong>Example failure:</strong> "We let someone invest beyond legal limits"</li>
+              </ul>
+            </div>
+            <div className="architecture-card">
+              <div className="architecture-icon">
+                <Shield size={32} strokeWidth={1.5} />
+              </div>
+              <h3>SOC 2 Compliance: "How We Do It"</h3>
+              <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
+                <strong>Technical & Security Standard</strong> – Proves our technology is secure. Partially outsourced.
+              </p>
+              <ul>
+                <li><strong>Goal:</strong> Data security and operational trust</li>
+                <li><strong>Audits:</strong> Are systems encrypted? Do we have backups? Is access controlled?</li>
+                <li><strong>Who checks:</strong> Independent 3rd-party auditors (AICPA certified)</li>
+                <li><strong>Example failure:</strong> "We had a data breach exposing user passwords"</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="solution-box" style={{ background: 'var(--bg-white)', padding: '2rem', borderRadius: '12px', border: '2px solid var(--border-color)' }}>
+            <h3>Shared Responsibility Model</h3>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginTop: '1.5rem', textAlign: 'left' }}>
+              <div>
+                <h4 style={{ fontSize: '1.1rem', marginBottom: '0.75rem', color: 'var(--text-primary)' }}>What We Inherit (Outsourced)</h4>
+                <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.95rem', color: 'var(--text-secondary)' }}>
+                  <li style={{ padding: '0.4rem 0' }}>✓ AWS physical & network security</li>
+                  <li style={{ padding: '0.4rem 0' }}>✓ Plaid's banking & KYC compliance</li>
+                  <li style={{ padding: '0.4rem 0' }}>✓ DocuSign's e-signature legality</li>
+                  <li style={{ padding: '0.4rem 0' }}>✓ Escrow partner's fund custody license</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style={{ fontSize: '1.1rem', marginBottom: '0.75rem', color: 'var(--text-primary)' }}>What We Own (Our Responsibility)</h4>
+                <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.95rem', color: 'var(--text-secondary)' }}>
+                  <li style={{ padding: '0.4rem 0' }}>→ Our application code security</li>
+                  <li style={{ padding: '0.4rem 0' }}>→ Our team's access controls</li>
+                  <li style={{ padding: '0.4rem 0' }}>→ Our business logic (FINRA rules)</li>
+                  <li style={{ padding: '0.4rem 0' }}>→ Our vendor management & oversight</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <p className="slide-note" style={{ marginTop: '2rem' }}><strong>Bottom Line:</strong> We leverage world-class infrastructure for security, but we own and build the regulatory compliance logic that makes this platform unique.</p>
+        </div>
+      </section>
+
+      {/* Slide 14: Closing */}
       <section className="slide closing-slide">
         <div className="container">
           <h2 className="section-title">Why We'll Succeed</h2>
@@ -578,7 +645,7 @@ export default function PitchPage() {
       {/* Footer */}
       <footer className="pitch-footer">
         <div className="container">
-          <p className="footer-pages">Use arrow keys or scroll to navigate • 13 slides</p>
+          <p className="footer-pages">Use arrow keys or scroll to navigate • 14 slides</p>
         </div>
       </footer>
     </div>
