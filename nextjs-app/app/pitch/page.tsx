@@ -339,47 +339,37 @@ export default function PitchPage() {
       <section className="slide">
         <div className="container">
           <h2 className="section-title">Technical Build Budget</h2>
-          <p className="stack-philosophy">Estimated $250K-$500K for complete technical platform</p>
+          <p className="stack-philosophy">Estimated $300K-$500K for development + infrastructure</p>
           <div className="budget-breakdown">
             <div className="budget-item">
               <div className="budget-header">
-                <h4>Core Platform Development</h4>
-                <span className="budget-percent">$120K-$200K</span>
+                <h4>Development & Engineering</h4>
+                <span className="budget-percent">$300K-$500K</span>
               </div>
               <div className="budget-bar">
-                <div className="budget-fill" style={{ width: '45%' }}></div>
+                <div className="budget-fill" style={{ width: '70%' }}></div>
               </div>
-              <p>Full-stack development: investor/founder dashboards, campaign flows, user management, real-time analytics</p>
+              <p>Full-stack development team: investor/founder dashboards, campaign flows, user management, real-time analytics, compliance automation, testing & QA</p>
             </div>
             <div className="budget-item">
               <div className="budget-header">
-                <h4>Infrastructure & Integrations</h4>
-                <span className="budget-percent">$60K-$120K</span>
+                <h4>Infrastructure & Integration Services</h4>
+                <span className="budget-percent">$50K-$100K</span>
               </div>
               <div className="budget-bar">
-                <div className="budget-fill" style={{ width: '25%' }}></div>
+                <div className="budget-fill" style={{ width: '15%' }}></div>
               </div>
-              <p>AWS hosting, Plaid KYC, DocuSign API, escrow integration, Polygon blockchain, database setup</p>
+              <p>Plaid KYC subscription, DocuSign API, AWS hosting & infrastructure, escrow integration fees, Polygon blockchain implementation</p>
             </div>
             <div className="budget-item">
               <div className="budget-header">
-                <h4>Security & Compliance Systems</h4>
+                <h4>Security Audits & Testing</h4>
                 <span className="budget-percent">$40K-$80K</span>
               </div>
               <div className="budget-bar">
-                <div className="budget-fill" style={{ width: '20%' }}></div>
+                <div className="budget-fill" style={{ width: '12%' }}></div>
               </div>
-              <p>SOC 2 Type II audit, penetration testing, security hardening, compliance automation tools</p>
-            </div>
-            <div className="budget-item">
-              <div className="budget-header">
-                <h4>Testing & QA</h4>
-                <span className="budget-percent">$20K-$50K</span>
-              </div>
-              <div className="budget-bar">
-                <div className="budget-fill" style={{ width: '10%' }}></div>
-              </div>
-              <p>Automated testing suite, beta testing infrastructure, bug fixes, performance optimization</p>
+              <p>SOC 2 Type II audit, third-party penetration testing, security consultants, vulnerability assessments</p>
             </div>
             <div className="budget-item">
               <div className="budget-header">
@@ -387,11 +377,12 @@ export default function PitchPage() {
                 <span className="budget-percent">Separate Budget</span>
               </div>
               <div className="budget-bar">
-                <div className="budget-fill" style={{ width: '0%', backgroundColor: '#ccc' }}></div>
+                <div className="budget-fill" style={{ width: '3%', backgroundColor: '#ccc' }}></div>
               </div>
               <p>Securities counsel, FINRA registration, compliance personnel (handled separately from technical build)</p>
             </div>
           </div>
+          <p className="slide-note" style={{ marginTop: '2rem' }}><strong>Total Technical Investment:</strong> $390K-$680K including all development, infrastructure, and security requirements</p>
         </div>
       </section>
 
