@@ -11,7 +11,7 @@ export default function PitchPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === 'demo2025') {
+    if (password === 'faith2025') {
       setIsUnlocked(true);
       setError('');
     } else {
