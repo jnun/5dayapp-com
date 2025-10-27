@@ -9,7 +9,7 @@ export default function PitchPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 14;
+  const totalSlides = 15;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -113,7 +113,7 @@ export default function PitchPage() {
               </div>
               <h3>Blockchain-Backed Trust</h3>
               <ul>
-                <li>Polygon zkEVM provides immutable investment records—investor confidence and regulatory compliance in one</li>
+                <li>Immutable blockchain records provide investor confidence and regulatory compliance in one</li>
                 <li>Transparent, verifiable ledger eliminates disputes over ownership</li>
                 <li>Future-proof: positions us for secondary market and digital securities innovation</li>
                 <li>Industry-first for faith-based crowdfunding platforms</li>
@@ -207,8 +207,8 @@ export default function PitchPage() {
               </div>
               <div className="tech-content">
                 <div className="tech-label">Blockchain</div>
-                <div className="tech-badge">Polygon zkEVM</div>
-                <p>Immutable investment records with low costs—gives investors permanent proof of ownership</p>
+                <div className="tech-badge">Enterprise Blockchain</div>
+                <p>Immutable investment records—gives investors permanent proof of ownership with enterprise-grade reliability</p>
               </div>
             </div>
           </div>
@@ -239,7 +239,7 @@ export default function PitchPage() {
                 <li><strong>Plaid Identity:</strong> Bank-grade KYC/AML verification out of the box—no need to build from scratch</li>
                 <li><strong>DocuSign API:</strong> Legally binding e-signatures with built-in audit trails and compliance certificates</li>
                 <li><strong>Qualified Escrow Partner:</strong> Licensed third-party fund custody—regulatory requirement handled externally</li>
-                <li><strong>AWS Compliance Suite:</strong> SOC 2 certified infrastructure, S3 with immutable storage for SEC document retention</li>
+                <li><strong>AWS Compliance Suite:</strong> SOC 2 certified infrastructure with immutable blockchain storage for SEC document retention and investment records</li>
               </ul>
             </div>
             <div className="build-section">
@@ -250,7 +250,7 @@ export default function PitchPage() {
               <ul className="build-steps">
                 <li><strong>React + FastAPI:</strong> Proven frameworks with extensive libraries—rapid feature development</li>
                 <li><strong>PostgreSQL:</strong> Battle-tested database with built-in ACID compliance for financial transactions</li>
-                <li><strong>Polygon zkEVM:</strong> Turnkey blockchain integration for immutable investment records without building custom infrastructure</li>
+                <li><strong>Enterprise Blockchain:</strong> Turnkey blockchain integration for immutable investment records without building custom infrastructure</li>
                 <li><strong>API-First Design:</strong> Clean separation enables web launch now, mobile apps later without rearchitecture</li>
               </ul>
             </div>
@@ -317,7 +317,7 @@ export default function PitchPage() {
               <ul>
                 <li>Complete SOC 2 Type II audit</li>
                 <li>Third-party penetration testing</li>
-                <li>Blockchain ledger implementation (Polygon zkEVM)</li>
+                <li>Blockchain ledger implementation</li>
                 <li>Beta testing with pilot companies</li>
                 <li>FINRA Funding Portal approval</li>
               </ul>
@@ -338,7 +338,7 @@ export default function PitchPage() {
       {/* Slide 8: Build Budget */}
       <section className="slide">
         <div className="container">
-          <h2 className="section-title">Technical Build Budget</h2>
+          <h2 className="section-title">MVP Proof of Concept</h2>
           <p className="stack-philosophy">Estimated $300K-$500K for development + infrastructure</p>
           <div className="budget-breakdown">
             <div className="budget-item">
@@ -359,7 +359,7 @@ export default function PitchPage() {
               <div className="budget-bar">
                 <div className="budget-fill" style={{ width: '15%' }}></div>
               </div>
-              <p>Plaid KYC subscription, DocuSign API, AWS hosting & infrastructure, escrow integration fees, Polygon blockchain implementation</p>
+              <p>Plaid KYC subscription, DocuSign API, AWS hosting & infrastructure, escrow integration fees, blockchain implementation</p>
             </div>
             <div className="budget-item">
               <div className="budget-header">
@@ -409,7 +409,7 @@ export default function PitchPage() {
                 <li>Develop investor/founder dashboards and campaign flows</li>
                 <li>Integrate KYC/AML (Plaid), e-signature (DocuSign), escrow</li>
                 <li>Build RegCF compliance engine and investment limit automation</li>
-                <li>Implement blockchain ledger integration (Polygon zkEVM)</li>
+                <li>Implement blockchain ledger integration</li>
               </ul>
             </div>
             <div className="timeline-phase">
@@ -456,7 +456,7 @@ export default function PitchPage() {
             </div>
             <div className="team-card">
               <h4>Integration Partners</h4>
-              <p>Plaid (KYC/banking), DocuSign (e-signature), qualified escrow provider, Polygon (blockchain)</p>
+              <p>Plaid (KYC/banking), DocuSign (e-signature), qualified escrow provider, enterprise blockchain solution</p>
             </div>
           </div>
           <p className="team-note"><strong>Strategy:</strong> Build fast with a lean core team, augmented by best-in-class third-party services and consultants.</p>
@@ -643,10 +643,75 @@ export default function PitchPage() {
         </div>
       </section>
 
+      {/* Slide 15: UI Design Showcase */}
+      <section className="slide alt-slide">
+        <div className="container">
+          <h2 className="section-title">UI Design Showcase</h2>
+          <p className="stack-philosophy">Experience the actual user interfaces we&apos;ve designed for the platform</p>
+
+          <div className="ui-showcase-grid">
+            <a href="/invest" target="_blank" className="ui-showcase-card">
+              <div className="showcase-number">01</div>
+              <h3>Investment Discovery</h3>
+              <p>Browse and search faith-based investment opportunities with beautiful, intuitive filtering and real-time progress tracking.</p>
+              <div className="showcase-link">
+                <span>View Live Demo</span>
+                <GitBranch size={18} />
+              </div>
+            </a>
+
+            <a href="/verify" target="_blank" className="ui-showcase-card">
+              <div className="showcase-number">02</div>
+              <h3>ID Verification Flow</h3>
+              <p>Frictionless KYC process with Plaid integration—bank-grade security that feels simple and trustworthy.</p>
+              <div className="showcase-link">
+                <span>View Live Demo</span>
+                <GitBranch size={18} />
+              </div>
+            </a>
+
+            <a href="/sign" target="_blank" className="ui-showcase-card">
+              <div className="showcase-number">03</div>
+              <h3>Document Signing</h3>
+              <p>Professional multi-step signing experience powered by DocuSign with clear progress tracking and legal compliance.</p>
+              <div className="showcase-link">
+                <span>View Live Demo</span>
+                <GitBranch size={18} />
+              </div>
+            </a>
+
+            <a href="/notifications" target="_blank" className="ui-showcase-card">
+              <div className="showcase-number">04</div>
+              <h3>Smart Notifications</h3>
+              <p>Investment round closing alerts, milestone updates, and founder communications—all in one beautiful dashboard.</p>
+              <div className="showcase-link">
+                <span>View Live Demo</span>
+                <GitBranch size={18} />
+              </div>
+            </a>
+
+            <a href="/certificate/abc123" target="_blank" className="ui-showcase-card">
+              <div className="showcase-number">05</div>
+              <h3>Blockchain Certificate</h3>
+              <p>Stunning blockchain-verified investment certificates with permanent ownership records on Polygon zkEVM.</p>
+              <div className="showcase-link">
+                <span>View Live Demo</span>
+                <GitBranch size={18} />
+              </div>
+            </a>
+          </div>
+
+          <div className="solution-box" style={{ marginTop: '2rem' }}>
+            <h3>These Are Real, Working Interfaces</h3>
+            <p>Click any card above to experience the actual UI. These aren&apos;t mockups or prototypes—they&apos;re production-quality interfaces that demonstrate our design and development capabilities.</p>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="pitch-footer">
         <div className="container">
-          <p className="footer-pages">Use arrow keys or scroll to navigate • 14 slides</p>
+          <p className="footer-pages">Use arrow keys or scroll to navigate • 15 slides</p>
         </div>
       </footer>
     </div>
