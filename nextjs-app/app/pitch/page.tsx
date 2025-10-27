@@ -386,49 +386,50 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 9: Build Timeline */}
+      {/* Slide 9: Build Phases */}
       <section className="slide alt-slide">
         <div className="container">
-          <h2 className="section-title">Build Timeline</h2>
+          <h2 className="section-title">Build Phases</h2>
+          <p className="stack-philosophy">Iterative development focused on speed, security, and regulatory readiness</p>
           <div className="timeline">
             <div className="timeline-phase">
-              <div className="timeline-marker">Q1</div>
-              <h4>Team & Foundation</h4>
+              <div className="timeline-marker">Phase 1</div>
+              <h4>Foundation & Planning</h4>
               <ul>
-                <li>Hire CTO and lead engineers</li>
-                <li>Engage securities counsel</li>
+                <li>Engage securities counsel and compliance advisors</li>
                 <li>File FINRA Funding Portal application</li>
-                <li>Finalize technical specs and architecture</li>
+                <li>Finalize technical architecture and integrations</li>
+                <li>Set up core infrastructure and development environments</li>
               </ul>
             </div>
             <div className="timeline-phase">
-              <div className="timeline-marker">Q2-Q3</div>
-              <h4>Core Development</h4>
+              <div className="timeline-marker">Phase 2</div>
+              <h4>Core Platform Build</h4>
               <ul>
-                <li>Build MVP: investor/founder dashboards, campaign flows</li>
+                <li>Develop investor/founder dashboards and campaign flows</li>
                 <li>Integrate KYC/AML (Plaid), e-signature (DocuSign), escrow</li>
-                <li>Implement RegCF compliance engine and investment limits</li>
-                <li>Develop blockchain ledger integration (Polygon zkEVM)</li>
+                <li>Build RegCF compliance engine and investment limit automation</li>
+                <li>Implement blockchain ledger integration (Polygon zkEVM)</li>
               </ul>
             </div>
             <div className="timeline-phase">
-              <div className="timeline-marker">Q4</div>
+              <div className="timeline-marker">Phase 3</div>
               <h4>Security & Testing</h4>
               <ul>
-                <li>Complete SOC 2 Type II audit</li>
-                <li>Third-party penetration testing</li>
-                <li>Beta test with 2-3 pilot campaigns</li>
-                <li>Fix bugs, optimize performance, harden security</li>
+                <li>Complete SOC 2 Type II audit process</li>
+                <li>Third-party penetration testing and remediation</li>
+                <li>Beta testing with select pilot campaigns</li>
+                <li>Performance optimization and security hardening</li>
               </ul>
             </div>
             <div className="timeline-phase">
-              <div className="timeline-marker">Q5</div>
-              <h4>Launch</h4>
+              <div className="timeline-marker">Phase 4</div>
+              <h4>Launch & Scale</h4>
               <ul>
                 <li>Receive FINRA Funding Portal approval</li>
                 <li>Launch first live campaigns</li>
-                <li>Monitor systems, gather feedback, iterate</li>
-                <li>Plan Series A and next-phase features</li>
+                <li>Monitor systems, gather user feedback, iterate rapidly</li>
+                <li>Plan growth initiatives and additional features</li>
               </ul>
             </div>
           </div>
