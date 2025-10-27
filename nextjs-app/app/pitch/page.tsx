@@ -559,7 +559,7 @@ export default function PitchPage() {
           <div className="closing-content">
             <div className="closing-section">
               <h3>Our Unfair Advantage</h3>
-              <p>We&apos;ve mastered the art of building complex financial platforms at startup speed. While others take years to launch, we ship secure, compliant, user-friendly platforms in months—without cutting corners. This isn&apos;t just faster development; it&apos;s a fundamental competitive advantage.</p>
+              <p>We build at startup speed, but with institutional-grade compliance. Our team's expertise turns regulatory complexity, most team's biggest bottleneck, into our primary advantage. We ship secure, audited platforms in a fraction of the traditional timeline.</p>
             </div>
             <div className="closing-section">
               <h3>The Complete Package</h3>
