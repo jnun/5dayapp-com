@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Hope Has Investors - Confidential Pitch</title>
+    <title>Hope Has Investors - Technical Overview</title>
     <link rel="stylesheet" href="pitch-styles.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
     <div id="password-gate" class="password-gate">
         <div class="password-container">
             <div class="lock-icon">🔒</div>
-            <h1>Confidential Pitch Deck</h1>
+            <h1>Technical Build Overview</h1>
             <p>Please enter the password to access this document</p>
             <form id="password-form" onsubmit="return checkPassword(event)">
                 <input
@@ -36,91 +36,95 @@
                 <h1 class="cover-title">Hope Has Investors</h1>
                 <p class="cover-subtitle">Faith Powered Equity Crowdfunding Platform</p>
                 <div class="cover-meta">
-                    <span>SEED ROUND PITCH DECK</span>
+                    <span>TECHNICAL BUILD OVERVIEW</span>
                     <span>•</span>
                     <span>CONFIDENTIAL</span>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 2: The Opportunity -->
+        <!-- Slide 2: Technical Challenge -->
         <section class="slide">
             <div class="slide-content">
-                <h2 class="slide-title">The Opportunity</h2>
+                <h2 class="slide-title">The Technical Challenge</h2>
                 <div class="big-stat">
-                    <div class="stat-number">$1.3B+</div>
-                    <div class="stat-label">Invested via Regulation Crowdfunding since 2016</div>
+                    <div class="stat-number">RegCF</div>
+                    <div class="stat-label">Building a FINRA-registered funding portal from scratch</div>
                 </div>
                 <div class="stat-grid">
                     <div class="stat-item">
-                        <div class="stat-value">79%</div>
-                        <div class="stat-desc">Success rate: campaigns that hit funding goals (2023)</div>
+                        <div class="stat-value">18+ mos</div>
+                        <div class="stat-desc">FINRA registration process timeline</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-value">$100B+</div>
-                        <div class="stat-desc">Secondary market for private assets (annual volume)</div>
+                        <div class="stat-value">SOC 2</div>
+                        <div class="stat-desc">Security compliance required for financial services</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-value">70M+</div>
-                        <div class="stat-desc">Faith-based investors in US</div>
+                        <div class="stat-value">7 years</div>
+                        <div class="stat-desc">Document retention requirement per SEC rules</div>
                     </div>
                 </div>
-                <p class="slide-note">Sources: SEC, KingsCrowd, Bain & Company, Preqin, Pew Research</p>
+                <p class="slide-note">Building a regulated financial platform, not just a website</p>
             </div>
         </section>
 
-        <!-- Slide 3: The Problem -->
+        <!-- Slide 3: Engineering Constraints -->
         <section class="slide alt-slide">
             <div class="slide-content">
-                <h2 class="slide-title">The Problem</h2>
+                <h2 class="slide-title">Engineering Constraints</h2>
                 <div class="problem-solution-grid">
                     <div class="ps-card problem">
-                        <div class="ps-icon">❌</div>
-                        <h3>For Investors</h3>
+                        <div class="ps-icon">⚖️</div>
+                        <h3>Regulatory Requirements</h3>
                         <ul>
-                            <li>No trusted platform for faith-aligned investments</li>
-                            <li>Locked out of early-stage opportunities</li>
-                            <li>Must choose between values and returns</li>
+                            <li>Platform must enforce RegCF investment limits automatically</li>
+                            <li>Complete audit trail for every transaction and document access</li>
+                            <li>Cannot hold investor funds—must integrate qualified escrow</li>
+                            <li>Mandatory 21-day review period and Form C compliance</li>
                         </ul>
                     </div>
                     <div class="ps-card problem">
-                        <div class="ps-icon">❌</div>
-                        <h3>For Founders</h3>
+                        <div class="ps-icon">🔐</div>
+                        <h3>Security & Compliance</h3>
                         <ul>
-                            <li>Existing platforms charge 7-12% + expensive legal fees</li>
-                            <li>Generic platforms don't understand faith communities</li>
-                            <li>No direct access to aligned capital</li>
+                            <li>Bank-level KYC/AML verification on all users</li>
+                            <li>AES-256 encryption + TLS 1.3 for all data</li>
+                            <li>SOC 2 Type II compliance before launch</li>
+                            <li>Immutable blockchain ledger for investment records</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 4: Our Solution -->
+        <!-- Slide 4: Technical Architecture -->
         <section class="slide">
             <div class="slide-content">
-                <h2 class="slide-title">Our Solution</h2>
+                <h2 class="slide-title">Technical Architecture</h2>
                 <div class="solution-box">
-                    <h3>A SEC-Compliant, Faith-Centered Investment Platform</h3>
-                    <p>Connecting believers with mission-driven companies through secure, transparent equity crowdfunding</p>
+                    <h3>Built for Compliance, Designed for Scale</h3>
+                    <p>API-first architecture separates financial transactions from presentation, enabling seamless regulatory evolution</p>
                 </div>
                 <div class="problem-solution-grid">
                     <div class="ps-card solution">
                         <div class="ps-icon">✓</div>
-                        <h3>For Investors</h3>
+                        <h3>Core Infrastructure</h3>
                         <ul>
-                            <li>Invest as little as $100 in companies you believe in</li>
-                            <li>Transparent, blockchain-verified ownership</li>
-                            <li>Align your portfolio with your faith</li>
+                            <li>React frontend with real-time campaign dashboards</li>
+                            <li>FastAPI backend with decoupled transaction logic</li>
+                            <li>PostgreSQL with transactional integrity + audit trails</li>
+                            <li>AWS SOC 2 compliant hosting + S3 document storage</li>
                         </ul>
                     </div>
                     <div class="ps-card solution">
                         <div class="ps-icon">✓</div>
-                        <h3>For Founders</h3>
+                        <h3>Critical Integrations</h3>
                         <ul>
-                            <li>Access passionate, aligned capital</li>
-                            <li>Lower fees (5% vs. 7-12%)</li>
-                            <li>Built-in community of believers</li>
+                            <li>Plaid: Bank verification, KYC, ACH transfers</li>
+                            <li>DocuSign: Legally binding e-signatures with audit certificates</li>
+                            <li>Polygon zkEVM: Immutable investment ledger</li>
+                            <li>Qualified escrow partner: Third-party fund custody</li>
                         </ul>
                     </div>
                 </div>
@@ -373,31 +377,33 @@
             </div>
         </section>
 
-        <!-- Slide 9: Go-to-Market Strategy -->
+        <!-- Slide 9: Technical Roadmap -->
         <section class="slide alt-slide">
             <div class="slide-content">
-                <h2 class="slide-title">Go-to-Market Strategy</h2>
+                <h2 class="slide-title">Technical Roadmap</h2>
                 <div class="gtm-phases">
                     <div class="gtm-phase">
                         <div class="phase-header">
-                            <h3>Phase 1: Curated Launch</h3>
+                            <h3>Phase 1: MVP Build</h3>
                         </div>
                         <ul>
-                            <li>Hand-pick 3-5 high-quality companies</li>
-                            <li>Invite 500-1,000 aligned investors</li>
-                            <li>Prove model, gather testimonials</li>
-                            <li><strong>Target:</strong> $500K-$2M in transactions</li>
+                            <li>Core platform: investor/founder dashboards</li>
+                            <li>KYC/AML integration (Plaid Identity)</li>
+                            <li>Document generation & e-signature (DocuSign)</li>
+                            <li>Escrow integration & payment flows</li>
+                            <li>RegCF compliance engine (investment limits, Form C)</li>
                         </ul>
                     </div>
                     <div class="gtm-phase">
                         <div class="phase-header">
-                            <h3>Phase 2: Community Growth</h3>
+                            <h3>Phase 2: Security & Launch</h3>
                         </div>
                         <ul>
-                            <li>Partner with faith-based organizations and influencers</li>
-                            <li>Open applications to vetted companies</li>
-                            <li>Scale to 10,000+ registered investors</li>
-                            <li><strong>Target:</strong> $5M-$10M in transactions</li>
+                            <li>Complete SOC 2 Type II audit</li>
+                            <li>Third-party penetration testing</li>
+                            <li>Blockchain ledger implementation (Polygon zkEVM)</li>
+                            <li>Beta testing with pilot companies</li>
+                            <li>FINRA Funding Portal approval</li>
                         </ul>
                     </div>
                     <div class="gtm-phase">
@@ -405,59 +411,59 @@
                             <h3>Phase 3: Scale</h3>
                         </div>
                         <ul>
-                            <li>Launch mobile app</li>
-                            <li>Expand to Reg A+ offerings (up to $75M)</li>
-                            <li>Build secondary market (ATS license)</li>
-                            <li><strong>Target:</strong> $50M+ annual volume</li>
+                            <li>Native mobile apps (iOS/Android)</li>
+                            <li>Expand to Reg A+ offerings (larger raises)</li>
+                            <li>Build secondary market (ATS license required)</li>
+                            <li>API for institutional integrations</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 10: Use of Funds -->
+        <!-- Slide 10: Build Budget -->
         <section class="slide capital-slide">
             <div class="slide-content">
-                <h2 class="slide-title">Use of Funds</h2>
+                <h2 class="slide-title">Technical Build Budget</h2>
                 <div class="capital-deployment">
                     <div class="deployment-grid">
                         <div class="deployment-item">
-                            <div class="deployment-bar" style="--percent: 15%"></div>
+                            <div class="deployment-bar" style="--percent: 35%"></div>
                             <div class="deployment-details">
-                                <div class="deployment-category">Engineering & Product</div>
-                                <div class="deployment-amount">$230K-$500K</div>
-                                <div class="deployment-desc">Full-stack platform development (MVP)</div>
+                                <div class="deployment-category">Engineering Team</div>
+                                <div class="deployment-amount">35%</div>
+                                <div class="deployment-desc">CTO + 2-3 full-stack engineers</div>
                             </div>
                         </div>
                         <div class="deployment-item">
-                            <div class="deployment-bar" style="--percent: 50%"></div>
+                            <div class="deployment-bar" style="--percent: 30%"></div>
                             <div class="deployment-details">
                                 <div class="deployment-category">Legal & Compliance</div>
-                                <div class="deployment-amount">TBD (50%)</div>
-                                <div class="deployment-desc">Securities counsel, FINRA registration, ongoing compliance</div>
+                                <div class="deployment-amount">30%</div>
+                                <div class="deployment-desc">Securities counsel, FINRA registration, Head of Compliance</div>
                             </div>
                         </div>
                         <div class="deployment-item">
                             <div class="deployment-bar" style="--percent: 20%"></div>
                             <div class="deployment-details">
-                                <div class="deployment-category">Operations & Infrastructure</div>
-                                <div class="deployment-amount">$300K (20%)</div>
-                                <div class="deployment-desc">AWS, integrations (Plaid, DocuSign), insurance, escrow</div>
+                                <div class="deployment-category">Infrastructure & Integrations</div>
+                                <div class="deployment-amount">20%</div>
+                                <div class="deployment-desc">AWS, Plaid, DocuSign, escrow, SOC 2 audit, pentest</div>
                             </div>
                         </div>
                         <div class="deployment-item">
                             <div class="deployment-bar" style="--percent: 10%"></div>
                             <div class="deployment-details">
-                                <div class="deployment-category">Marketing & Community</div>
-                                <div class="deployment-amount">$150K (10%)</div>
-                                <div class="deployment-desc">Brand, content, early partnerships</div>
+                                <div class="deployment-category">Operations</div>
+                                <div class="deployment-amount">10%</div>
+                                <div class="deployment-desc">Insurance, accounting, corporate setup</div>
                             </div>
                         </div>
                         <div class="deployment-item">
                             <div class="deployment-bar" style="--percent: 5%"></div>
                             <div class="deployment-details">
                                 <div class="deployment-category">Contingency</div>
-                                <div class="deployment-amount">$70K (5%)</div>
+                                <div class="deployment-amount">5%</div>
                                 <div class="deployment-desc">Buffer for regulatory or technical surprises</div>
                             </div>
                         </div>
@@ -466,55 +472,56 @@
             </div>
         </section>
 
-        <!-- Slide 11: Execution Plan -->
+        <!-- Slide 11: Build Timeline -->
         <section class="slide alt-slide">
             <div class="slide-content">
-                <h2 class="slide-title">Execution Plan</h2>
+                <h2 class="slide-title">Build Timeline</h2>
                 <div class="timeline">
                     <div class="timeline-item">
-                        <div class="timeline-marker">1</div>
+                        <div class="timeline-marker">Q1</div>
                         <div class="timeline-content">
-                            <h4>Foundation</h4>
+                            <h4>Team & Foundation</h4>
                             <ul>
-                                <li>Close seed round</li>
-                                <li>Hire engineering team</li>
+                                <li>Hire CTO and lead engineers</li>
+                                <li>Engage securities counsel</li>
                                 <li>File FINRA Funding Portal application</li>
-                                <li>Finalize technical architecture</li>
+                                <li>Finalize technical specs and architecture</li>
                             </ul>
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-marker">2</div>
+                        <div class="timeline-marker">Q2-Q3</div>
                         <div class="timeline-content">
-                            <h4>Build MVP</h4>
+                            <h4>Core Development</h4>
                             <ul>
-                                <li>Core platform development (investor + founder flows)</li>
-                                <li>Integrate Plaid, DocuSign, escrow partner</li>
-                                <li>Complete security audit & penetration testing</li>
-                                <li>Beta test with pilot companies</li>
+                                <li>Build MVP: investor/founder dashboards, campaign flows</li>
+                                <li>Integrate KYC/AML (Plaid), e-signature (DocuSign), escrow</li>
+                                <li>Implement RegCF compliance engine and investment limits</li>
+                                <li>Develop blockchain ledger integration (Polygon zkEVM)</li>
                             </ul>
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-marker">3</div>
+                        <div class="timeline-marker">Q4</div>
+                        <div class="timeline-content">
+                            <h4>Security & Testing</h4>
+                            <ul>
+                                <li>Complete SOC 2 Type II audit</li>
+                                <li>Third-party penetration testing</li>
+                                <li>Beta test with 2-3 pilot campaigns</li>
+                                <li>Fix bugs, optimize performance, harden security</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">Q5</div>
                         <div class="timeline-content">
                             <h4>Launch</h4>
                             <ul>
-                                <li>Receive FINRA approval</li>
-                                <li>Launch first campaigns</li>
-                                <li>Onboard aligned investors</li>
-                                <li>Process initial investments</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker">4</div>
-                        <div class="timeline-content">
-                            <h4>Scale & Series A</h4>
-                            <ul>
-                                <li>Proven model with successful campaigns</li>
-                                <li>Growing registered investor base</li>
-                                <li>Raise Series A to build mobile app & secondary market</li>
+                                <li>Receive FINRA Funding Portal approval</li>
+                                <li>Launch first live campaigns</li>
+                                <li>Monitor systems, gather feedback, iterate</li>
+                                <li>Plan Series A and next-phase features</li>
                             </ul>
                         </div>
                     </div>
@@ -522,68 +529,72 @@
             </div>
         </section>
 
-        <!-- Slide 12: Team -->
+        <!-- Slide 12: Engineering Team -->
         <section class="slide">
             <div class="slide-content">
-                <h2 class="slide-title">The Team</h2>
+                <h2 class="slide-title">Engineering Team Structure</h2>
                 <div class="team-intro">
-                    <p>We're assembling a world-class team with expertise in FinTech, compliance, and faith-based communities.</p>
+                    <p>Building a FinTech platform requires specialized expertise across engineering, security, and compliance.</p>
                 </div>
                 <div class="team-needs">
-                    <h3>Key Roles to Fill (Post-Funding)</h3>
+                    <h3>Core Technical Team</h3>
                     <div class="roles-grid">
                         <div class="role-card">
-                            <h4>CEO/Founder</h4>
-                            <p>Vision, fundraising, partnerships, regulatory strategy</p>
+                            <h4>CTO / Technical Founder</h4>
+                            <p>System architecture, technical strategy, security design, team leadership</p>
                         </div>
                         <div class="role-card">
-                            <h4>CTO</h4>
-                            <p>Technical architecture, team leadership, security</p>
+                            <h4>Senior Full-Stack Engineer #1</h4>
+                            <p>Backend (FastAPI), database design, API architecture, integrations</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>Senior Full-Stack Engineer #2</h4>
+                            <p>Frontend (React), investor/founder UX, real-time dashboards</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>DevSecOps Engineer</h4>
+                            <p>AWS infrastructure, CI/CD, security hardening, SOC 2 compliance</p>
                         </div>
                         <div class="role-card">
                             <h4>Head of Compliance</h4>
-                            <p>FINRA liaison, RegCF expert, ongoing regulatory oversight</p>
-                        </div>
-                        <div class="role-card">
-                            <h4>Lead Engineer(s)</h4>
-                            <p>Full-stack development, integrations, DevSecOps (2-3 hires)</p>
+                            <p>RegCF expertise, FINRA liaison, legal coordination, audit management</p>
                         </div>
                     </div>
                 </div>
                 <div class="advisor-note">
-                    <p><strong>Advisory Board:</strong> Assembling advisors with securities law, FinTech, and faith community expertise.</p>
+                    <p><strong>External Partners:</strong> Securities counsel, SOC 2 auditor, penetration testing firm, escrow provider.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 13: Why Now -->
+        <!-- Slide 13: Technical Risk Mitigation -->
         <section class="slide alt-slide">
             <div class="slide-content">
-                <h2 class="slide-title">Why Now?</h2>
+                <h2 class="slide-title">Technical Risk Mitigation</h2>
                 <div class="why-now-grid">
                     <div class="why-card">
-                        <div class="why-icon">📈</div>
-                        <h4>Market Momentum</h4>
-                        <p>RegCF volume doubled from 2021-2023. Retail investors want access to private markets.</p>
-                    </div>
-                    <div class="why-card">
                         <div class="why-icon">🏗️</div>
-                        <h4>Regulatory Clarity</h4>
-                        <p>SEC has finalized RegCF rules. Path to compliance is clear and proven.</p>
+                        <h4>Proven Architecture</h4>
+                        <p>API-first design enables web launch, then seamless mobile migration. No rearchitecture needed.</p>
                     </div>
                     <div class="why-card">
-                        <div class="why-icon">💡</div>
-                        <h4>Technology Maturity</h4>
-                        <p>Modern APIs (Plaid, DocuSign), blockchain infrastructure, and cloud security make this possible today.</p>
+                        <div class="why-icon">🔌</div>
+                        <h4>Best-in-Class Integrations</h4>
+                        <p>Plaid, DocuSign, and AWS are battle-tested by thousands of FinTech companies. We leverage proven infrastructure.</p>
                     </div>
                     <div class="why-card">
-                        <div class="why-icon">⛪</div>
-                        <h4>Values-Based Investing</h4>
-                        <p>ESG and faith-based investing is a $17 trillion market. Believers want to invest in alignment.</p>
+                        <div class="why-icon">🛡️</div>
+                        <h4>Security First</h4>
+                        <p>SOC 2 audit and penetration testing BEFORE launch. Security is built in, not bolted on.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">⚖️</div>
+                        <h4>Compliance Automation</h4>
+                        <p>RegCF rules enforced in code: investment limits, disclosure requirements, mandatory review periods. Human error minimized.</p>
                     </div>
                 </div>
                 <div class="urgency-note">
-                    <p><strong>The window is open:</strong> No dominant faith-focused platform exists yet. First mover with proper compliance wins.</p>
+                    <p><strong>Key advantage:</strong> Compliance designed into the architecture from day one—not retrofitted after launch.</p>
                 </div>
             </div>
         </section>
@@ -591,19 +602,20 @@
         <!-- Slide 14: Closing -->
         <section class="slide closing-slide">
             <div class="slide-content">
-                <h2 class="slide-title">Let's Build This Together</h2>
+                <h2 class="slide-title">Building a Regulated Financial Platform</h2>
                 <div class="closing-content">
                     <div class="closing-vision">
-                        <h3>Our Vision</h3>
-                        <p>A world where believers can invest their capital in companies that share their values, and where mission-driven founders have direct access to aligned capital.</p>
+                        <h3>Technical Philosophy</h3>
+                        <p>This isn't a website with payments—it's a FINRA-registered financial institution. Every line of code must serve compliance, security, and auditability. We're building for the long term.</p>
                     </div>
                     <div class="closing-next">
-                        <h3>Next Steps</h3>
+                        <h3>What We've Covered</h3>
                         <ol>
-                            <li>Schedule deep-dive meeting on framework & compliance</li>
-                            <li>Review detailed financial model</li>
-                            <li>Intro to securities counsel & advisors</li>
-                            <li>Term sheet & due diligence</li>
+                            <li>Regulatory constraints and engineering challenges</li>
+                            <li>Technical architecture and compliance automation</li>
+                            <li>Detailed implementation flows (KYC, escrow, documents)</li>
+                            <li>Security framework and risk mitigation</li>
+                            <li>Build timeline and team structure</li>
                         </ol>
                     </div>
                 </div>

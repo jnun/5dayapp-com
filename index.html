@@ -111,6 +111,20 @@
             <div class="cta-content">
                 <h2>Ready to Ship Fast?</h2>
                 <p>Let's discuss your project and how we can deliver it in record time.</p>
+
+                <form id="contact-form" class="contact-form">
+                    <div class="form-row">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <input type="text" id="company" name="company" placeholder="Company Name (Optional)">
+                    <textarea id="message" name="message" placeholder="Tell us about your project..." rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary btn-large" id="submit-btn">
+                        <span id="btn-text">Send Message</span>
+                        <span id="btn-loading" style="display: none;">Sending...</span>
+                    </button>
+                    <div id="form-message" class="form-message"></div>
+                </form>
             </div>
         </div>
     </section>

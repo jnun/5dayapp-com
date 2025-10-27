@@ -1,0 +1,28 @@
+# Node modules
+node_modules/
+nextjs-app/node_modules/
+
+# Next.js
+nextjs-app/.next/
+nextjs-app/out/
+
+# Environment files
+.env
+.env.local
+.env*.local
+
+# Vercel
+.vercel
+
+# MacOS
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build files
+nextjs-app/build/
+*.tsbuildinfo
