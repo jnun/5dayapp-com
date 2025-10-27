@@ -441,6 +441,90 @@ body {
     line-height: 1.7;
 }
 
+/* How We Build It Slide */
+.build-slide {
+    background: var(--bg-light);
+}
+
+.build-flows {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.build-flow {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+}
+
+.flow-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.flow-icon-large {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.flow-header h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.flow-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.flow-step-item {
+    padding-left: 1rem;
+    border-left: 3px solid var(--primary-color);
+}
+
+.flow-step-item strong {
+    display: block;
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+    font-weight: 700;
+}
+
+.flow-step-item p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.build-summary {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.build-summary p {
+    color: white;
+    font-size: 1.125rem;
+    margin: 0;
+}
+
+.build-summary strong {
+    color: var(--success-color);
+}
+
 /* Technology Framework */
 .framework-intro {
     text-align: center;
@@ -1136,7 +1220,8 @@ body {
     .moat-grid,
     .why-now-grid,
     .roles-grid,
-    .flow-diagram-grid {
+    .flow-diagram-grid,
+    .build-flows {
         grid-template-columns: 1fr;
     }
 }

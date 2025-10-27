@@ -215,7 +215,128 @@
             </div>
         </section>
 
-        <!-- Slide 7: Our Moat -->
+        <!-- Slide 7: How We Build It -->
+        <section class="slide build-slide">
+            <div class="slide-content">
+                <h2 class="slide-title">How We Build It: Architecture & Compliance</h2>
+
+                <div class="build-flows">
+                    <div class="build-flow">
+                        <div class="flow-header">
+                            <div class="flow-icon-large">👤</div>
+                            <h3>Investor Onboarding & KYC</h3>
+                        </div>
+                        <div class="flow-steps">
+                            <div class="flow-step-item">
+                                <strong>Identity Verification</strong>
+                                <p>Plaid Identity verifies name, DOB, SSN, address against government databases</p>
+                            </div>
+                            <div class="flow-step-item">
+                                <strong>Accreditation Check</strong>
+                                <p>Income/net worth verification for accredited investors; enforce RegCF investment limits for non-accredited</p>
+                            </div>
+                            <div class="flow-step-item">
+                                <strong>AML Screening</strong>
+                                <p>Automated screening against OFAC, sanctions lists, PEP databases</p>
+                            </div>
+                            <div class="flow-step-item">
+                                <strong>Result</strong>
+                                <p>Approved investor profile with verified identity & investment limits stored encrypted in PostgreSQL</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="build-flow">
+                        <div class="flow-header">
+                            <div class="flow-icon-large">✍️</div>
+                            <h3>Document Signing & Validation</h3>
+                        </div>
+                        <div class="flow-steps">
+                            <div class="flow-step-item">
+                                <strong>Subscription Agreement</strong>
+                                <p>Auto-generated from template with investor details pre-filled</p>
+                            </div>
+                            <div class="flow-step-item">
+                                <strong>DocuSign E-Signature</strong>
+                                <p>Legally binding e-signature with IP address, timestamp, and certificate of completion</p>
+                            </div>
+                            <div class="flow-step-item">
+                                <strong>Document Storage</strong>
+                                <p>Encrypted PDFs stored in AWS S3 with versioning and audit logs; 7-year retention per SEC requirements</p>
+                            </div>
+                            <div class="flow-step-item">
+                                <strong>Compliance Trail</strong>
+                                <p>Every signature, view, and download logged in PostgreSQL for regulatory audits</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="build-flow">
+                        <div class="flow-header">
+                            <div class="flow-icon-large">💵</div>
+                            <h3>Money Flow & Escrow</h3>
+                        </div>
+                        <div class="flow-steps">
+                            <div class="flow-step-item">
+                                <strong>We Never Touch Funds</strong>
+                                <p>Critical: Platform is not a custodian. All funds flow directly to qualified third-party escrow agent</p>
+                            </div>
+                            <div class="flow-step-item">
+                                <strong>ACH via Plaid</strong>
+                                <p>Investor authorizes ACH transfer from verified bank account → Escrow account</p>
+                            </div>
+                            <div class="flow-step-item">
+                                <strong>Held in Escrow</strong>
+                                <p>Funds held until campaign closes or cancels; if canceled, funds returned automatically</p>
+                            </div>
+                            <div class="flow-step-item">
+                                <strong>Disbursement to Company</strong>
+                                <p>On successful close, escrow agent releases funds to company; we facilitate instructions only</p>
+                            </div>
+                            <div class="flow-step-item">
+                                <strong>Blockchain Record</strong>
+                                <p>Transaction hash written to Polygon zkEVM for immutable proof of investment</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="build-flow">
+                        <div class="flow-header">
+                            <div class="flow-icon-large">🔒</div>
+                            <h3>Security & Compliance Architecture</h3>
+                        </div>
+                        <div class="flow-steps">
+                            <div class="flow-step-item">
+                                <strong>Data Encryption</strong>
+                                <p>AES-256 at rest (PostgreSQL TDE), TLS 1.3 in transit; PII encrypted at field level with separate key management</p>
+                            </div>
+                            <div class="flow-step-item">
+                                <strong>RegCF Automation</strong>
+                                <p>Platform enforces: $5M campaign max, investor limits based on income, mandatory Form C disclosures, 21-day review period</p>
+                            </div>
+                            <div class="flow-step-item">
+                                <strong>SOC 2 Type II</strong>
+                                <p>AWS infrastructure + application controls audited annually for security, availability, confidentiality</p>
+                            </div>
+                            <div class="flow-step-item">
+                                <strong>Audit Trails</strong>
+                                <p>Every transaction, document access, admin action logged immutably; queryable for FINRA inspections</p>
+                            </div>
+                            <div class="flow-step-item">
+                                <strong>Penetration Testing</strong>
+                                <p>Annual third-party pentest + bug bounty program; vulnerabilities remediated within 30 days</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="build-summary">
+                    <p><strong>Result:</strong> A platform architected to meet FINRA Funding Portal requirements from day one—not bolted on later.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 8: Our Moat -->
         <section class="slide moat-slide">
             <div class="slide-content">
                 <h2 class="slide-title">Our Competitive Moat</h2>
@@ -248,7 +369,7 @@
             </div>
         </section>
 
-        <!-- Slide 8: Go-to-Market Strategy -->
+        <!-- Slide 9: Go-to-Market Strategy -->
         <section class="slide alt-slide">
             <div class="slide-content">
                 <h2 class="slide-title">Go-to-Market Strategy</h2>
@@ -290,7 +411,7 @@
             </div>
         </section>
 
-        <!-- Slide 9: Revenue Model -->
+        <!-- Slide 10: Revenue Model -->
         <section class="slide">
             <div class="slide-content">
                 <h2 class="slide-title">Revenue Model</h2>
@@ -336,16 +457,11 @@
             </div>
         </section>
 
-        <!-- Slide 10: The Ask - Capital Deployment -->
+        <!-- Slide 11: Use of Funds -->
         <section class="slide capital-slide">
             <div class="slide-content">
-                <h2 class="slide-title">The Ask: Seed Round</h2>
-                <div class="ask-amount">
-                    <div class="ask-number">$1.5M</div>
-                    <div class="ask-label">18-Month Runway to Revenue</div>
-                </div>
+                <h2 class="slide-title">Use of Funds</h2>
                 <div class="capital-deployment">
-                    <h3>Use of Funds</h3>
                     <div class="deployment-grid">
                         <div class="deployment-item">
                             <div class="deployment-bar" style="--percent: 15%"></div>
@@ -392,7 +508,7 @@
             </div>
         </section>
 
-        <!-- Slide 11: Execution Plan -->
+        <!-- Slide 12: Execution Plan -->
         <section class="slide alt-slide">
             <div class="slide-content">
                 <h2 class="slide-title">Execution Plan</h2>
@@ -448,7 +564,7 @@
             </div>
         </section>
 
-        <!-- Slide 12: Team -->
+        <!-- Slide 13: Team -->
         <section class="slide">
             <div class="slide-content">
                 <h2 class="slide-title">The Team</h2>
@@ -482,7 +598,7 @@
             </div>
         </section>
 
-        <!-- Slide 13: Why Now -->
+        <!-- Slide 14: Why Now -->
         <section class="slide alt-slide">
             <div class="slide-content">
                 <h2 class="slide-title">Why Now?</h2>
@@ -514,7 +630,7 @@
             </div>
         </section>
 
-        <!-- Slide 14: Closing -->
+        <!-- Slide 15: Closing -->
         <section class="slide closing-slide">
             <div class="slide-content">
                 <h2 class="slide-title">Let's Build This Together</h2>
@@ -550,7 +666,7 @@
                     <p><strong>CONFIDENTIAL</strong> - This document contains proprietary information. Do not distribute without written permission.</p>
                 </div>
                 <div class="footer-pages">
-                    <p>Use arrow keys or scroll to navigate • 14 slides</p>
+                    <p>Use arrow keys or scroll to navigate • 15 slides</p>
                 </div>
             </div>
         </footer>
