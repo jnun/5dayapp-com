@@ -1,16 +1,19 @@
 // Password protection
-const CORRECT_PASSWORD = 'faith2025';
 const MAX_ATTEMPTS = 5;
-const SESSION_KEY = 'pitch_authenticated';
 let attempts = 0;
 
 // Consolidated initialization
-document.addEventListener('DOMContentLoaded', () => {
-    // Check authentication
-    const isAuthenticated = sessionStorage.getItem(SESSION_KEY);
-    if (isAuthenticated === 'true') {
-        unlockContent();
-        addAccessTimestamp();
+document.addEventListener('DOMContentLoaded', async () => {
+    // Check authentication via API
+    try {
+        const response = await fetch('/api/auth');
+        const data = await response.json();
+        if (data.authenticated) {
+            unlockContent();
+            addAccessTimestamp();
+        }
+    } catch (error) {
+        console.error('Auth check failed:', error);
     }
 
     // Setup smooth scroll for internal links
@@ -50,30 +53,51 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-function checkPassword(event) {
+async function checkPassword(event) {
     event.preventDefault();
 
     const passwordInput = document.getElementById('password-input');
     const errorMessage = document.getElementById('error-message');
+    const submitButton = document.querySelector('.btn-unlock');
     const enteredPassword = passwordInput.value;
 
-    if (enteredPassword === CORRECT_PASSWORD) {
-        sessionStorage.setItem(SESSION_KEY, 'true');
-        unlockContent();
-        addAccessTimestamp();
-    } else {
-        attempts++;
+    // Disable form during submission
+    passwordInput.disabled = true;
+    submitButton.disabled = true;
+    submitButton.textContent = 'Verifying...';
 
-        if (attempts >= MAX_ATTEMPTS) {
-            errorMessage.textContent = 'Too many failed attempts. Please refresh and try again.';
-            passwordInput.disabled = true;
-            document.querySelector('.btn-unlock').disabled = true;
+    try {
+        const response = await fetch('/api/auth', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ password: enteredPassword }),
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            unlockContent();
+            addAccessTimestamp();
         } else {
-            errorMessage.textContent = `Incorrect password. ${MAX_ATTEMPTS - attempts} attempts remaining.`;
-            passwordInput.value = '';
-            passwordInput.classList.add('shake');
-            setTimeout(() => passwordInput.classList.remove('shake'), 500);
+            attempts++;
+
+            if (attempts >= MAX_ATTEMPTS) {
+                errorMessage.textContent = 'Too many failed attempts. Please refresh and try again.';
+            } else {
+                errorMessage.textContent = data.error || `Incorrect password. ${MAX_ATTEMPTS - attempts} attempts remaining.`;
+                passwordInput.value = '';
+                passwordInput.classList.add('shake');
+                setTimeout(() => passwordInput.classList.remove('shake'), 500);
+                passwordInput.disabled = false;
+                submitButton.disabled = false;
+                submitButton.textContent = 'Unlock';
+            }
         }
+    } catch (error) {
+        errorMessage.textContent = 'Authentication failed. Please try again.';
+        passwordInput.disabled = false;
+        submitButton.disabled = false;
+        submitButton.textContent = 'Unlock';
     }
 
     return false;

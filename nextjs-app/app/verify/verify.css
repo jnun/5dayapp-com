@@ -183,13 +183,21 @@
   margin-top: 1.5rem;
 }
 
-.help-text a {
+.help-text a,
+.help-link {
   color: #667eea;
   text-decoration: none;
   font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
 }
 
-.help-text a:hover {
+.help-text a:hover,
+.help-link:hover {
   text-decoration: underline;
 }
 

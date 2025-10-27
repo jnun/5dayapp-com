@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Bell, TrendingUp, CheckCircle, Clock, DollarSign, Users, Calendar, ArrowRight, X } from 'lucide-react';
-import Link from 'next/link';
+import DemoModal from '../components/DemoModal';
 import './notifications.css';
 
 interface Notification {
@@ -24,6 +24,8 @@ interface Notification {
 }
 
 export default function NotificationsPage() {
+  const [showModal, setShowModal] = useState(false);
+  const [modalConfig, setModalConfig] = useState({ title: '', message: '', suggestions: [] as string[] });
   const [notifications, setNotifications] = useState<Notification[]>([
     {
       id: '1',
@@ -115,6 +117,23 @@ export default function NotificationsPage() {
     setNotifications(prev => prev.filter(notif => notif.id !== id));
   };
 
+  const handleActionClick = (actionUrl: string, notificationTitle: string) => {
+    if (actionUrl.startsWith('/invest/') || actionUrl.includes('/updates')) {
+      setModalConfig({
+        title: 'Campaign Details',
+        message: `In the full platform, clicking "${notificationTitle}" would take you to the detailed campaign page with full pitch, financials, and investment options.`,
+        suggestions: [
+          'Browse all investments at /invest',
+          'Try the signing process at /sign',
+          'View your blockchain certificate at /certificate/abc123'
+        ]
+      });
+      setShowModal(true);
+    } else if (actionUrl.startsWith('/certificate/')) {
+      window.location.href = actionUrl;
+    }
+  };
+
   const filteredNotifications = filter === 'unread'
     ? notifications.filter(n => !n.read)
     : notifications;
@@ -168,9 +187,9 @@ export default function NotificationsPage() {
               <Bell size={64} strokeWidth={1.5} />
               <h3>No {filter === 'unread' ? 'unread' : ''} notifications</h3>
               <p>You&apos;re all caught up! Check back later for updates on your investments.</p>
-              <Link href="/invest" className="btn btn-primary">
+              <button onClick={() => window.location.href = '/invest'} className="btn btn-primary">
                 Browse Investment Opportunities
-              </Link>
+              </button>
             </div>
           ) : (
             filteredNotifications.map(notification => (
@@ -179,11 +198,20 @@ export default function NotificationsPage() {
                 notification={notification}
                 onMarkAsRead={handleMarkAsRead}
                 onDismiss={handleDismiss}
+                onActionClick={handleActionClick}
               />
             ))
           )}
         </div>
       </div>
+
+      <DemoModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        title={modalConfig.title}
+        message={modalConfig.message}
+        suggestions={modalConfig.suggestions}
+      />
     </div>
   );
 }
@@ -192,10 +220,12 @@ function NotificationCard({
   notification,
   onMarkAsRead,
   onDismiss,
+  onActionClick,
 }: {
   notification: Notification;
   onMarkAsRead: (id: string) => void;
   onDismiss: (id: string) => void;
+  onActionClick: (actionUrl: string, notificationTitle: string) => void;
 }) {
   const getIcon = () => {
     switch (notification.type) {
@@ -277,10 +307,13 @@ function NotificationCard({
 
         <div className="notification-actions">
           {notification.actionLabel && notification.actionUrl && (
-            <Link href={notification.actionUrl} className="action-button primary">
+            <button
+              onClick={() => onActionClick(notification.actionUrl!, notification.actionLabel!)}
+              className="action-button primary"
+            >
               {notification.actionLabel}
               <ArrowRight size={16} />
-            </Link>
+            </button>
           )}
           {!notification.read && (
             <button className="action-button secondary" onClick={() => onMarkAsRead(notification.id)}>

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Shield, CheckCircle, Building2, CreditCard, Lock, ArrowRight, ArrowLeft } from 'lucide-react';
+import DemoModal from '../components/DemoModal';
 import './verify.css';
 
 type VerificationStep = 'intro' | 'plaid' | 'processing' | 'success';
@@ -9,6 +10,8 @@ type VerificationStep = 'intro' | 'plaid' | 'processing' | 'success';
 export default function VerifyPage() {
   const [currentStep, setCurrentStep] = useState<VerificationStep>('intro');
   const [isProcessing, setIsProcessing] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [modalConfig, setModalConfig] = useState({ title: '', message: '', suggestions: [] as string[] });
 
   const handleStartVerification = () => {
     setCurrentStep('plaid');
@@ -31,19 +34,32 @@ export default function VerifyPage() {
     }
   };
 
+  const handleShowModal = (title: string, message: string, suggestions: string[]) => {
+    setModalConfig({ title, message, suggestions });
+    setShowModal(true);
+  };
+
   return (
     <div className="verify-page">
       <div className="verify-container">
-        {currentStep === 'intro' && <IntroStep onNext={handleStartVerification} />}
+        {currentStep === 'intro' && <IntroStep onNext={handleStartVerification} onShowModal={handleShowModal} />}
         {currentStep === 'plaid' && <PlaidStep onConnect={handlePlaidConnect} onBack={handleBack} />}
         {currentStep === 'processing' && <ProcessingStep />}
-        {currentStep === 'success' && <SuccessStep />}
+        {currentStep === 'success' && <SuccessStep onShowModal={handleShowModal} />}
       </div>
+
+      <DemoModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        title={modalConfig.title}
+        message={modalConfig.message}
+        suggestions={modalConfig.suggestions}
+      />
     </div>
   );
 }
 
-function IntroStep({ onNext }: { onNext: () => void }) {
+function IntroStep({ onNext, onShowModal }: { onNext: () => void; onShowModal: (title: string, message: string, suggestions: string[]) => void }) {
   return (
     <div className="verify-step intro-step">
       <div className="step-icon">
@@ -95,7 +111,19 @@ function IntroStep({ onNext }: { onNext: () => void }) {
       </button>
 
       <p className="help-text">
-        Have questions? <a href="/help">Read our verification FAQ</a>
+        Have questions? <button
+          onClick={(e) => {
+            e.preventDefault();
+            onShowModal(
+              'FAQ Coming Soon',
+              'In a full implementation, this would link to a comprehensive FAQ page covering identity verification, data security, and compliance questions.',
+              ['Continue with verification to see the Plaid integration']
+            );
+          }}
+          className="help-link"
+        >
+          Read our verification FAQ
+        </button>
       </p>
     </div>
   );
@@ -196,7 +224,7 @@ function ProcessingStep() {
   );
 }
 
-function SuccessStep() {
+function SuccessStep({ onShowModal }: { onShowModal: (title: string, message: string, suggestions: string[]) => void }) {
   return (
     <div className="verify-step success-step">
       <div className="success-icon">
@@ -226,13 +254,27 @@ function SuccessStep() {
       </div>
 
       <div className="action-buttons">
-        <a href="/invest" className="btn btn-primary btn-large">
+        <button
+          onClick={() => window.location.href = '/invest'}
+          className="btn btn-primary btn-large"
+        >
           Browse Investment Opportunities
           <ArrowRight size={20} />
-        </a>
-        <a href="/dashboard" className="btn btn-outline">
+        </button>
+        <button
+          onClick={() => onShowModal(
+            'Dashboard Demo',
+            'In the full platform, your dashboard would show your investment portfolio, pending transactions, document history, and personalized recommendations.',
+            [
+              'Browse investments at /invest',
+              'See the document signing flow at /sign',
+              'Check notifications at /notifications'
+            ]
+          )}
+          className="btn btn-outline"
+        >
           Go to Dashboard
-        </a>
+        </button>
       </div>
 
       <div className="success-note">

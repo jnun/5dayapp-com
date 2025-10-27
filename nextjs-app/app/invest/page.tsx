@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Search, TrendingUp, Heart, Users, DollarSign, Clock, ChevronRight, Filter } from 'lucide-react';
-import Link from 'next/link';
+import DemoModal from '../components/DemoModal';
 import './invest.css';
 
 interface Investment {
@@ -21,6 +21,7 @@ interface Investment {
 export default function InvestPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [showModal, setShowModal] = useState(false);
 
   const investments: Investment[] = [
     {
@@ -164,7 +165,7 @@ export default function InvestPage() {
             <h2 className="section-title">Featured Opportunities</h2>
             <div className="featured-grid">
               {featuredInvestments.map(investment => (
-                <InvestmentCard key={investment.id} investment={investment} featured />
+                <InvestmentCard key={investment.id} investment={investment} featured onClick={() => setShowModal(true)} />
               ))}
             </div>
           </div>
@@ -179,7 +180,7 @@ export default function InvestPage() {
           </h2>
           <div className="investments-grid">
             {filteredInvestments.map(investment => (
-              <InvestmentCard key={investment.id} investment={investment} />
+              <InvestmentCard key={investment.id} investment={investment} onClick={() => setShowModal(true)} />
             ))}
           </div>
           {filteredInvestments.length === 0 && (
@@ -192,15 +193,28 @@ export default function InvestPage() {
           )}
         </div>
       </section>
+
+      <DemoModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        title="Demo Feature"
+        message="This would take you to the detailed investment page where you could view the company's full pitch, financials, and complete your investment."
+        suggestions={[
+          'Try the ID Verification flow at /verify',
+          'See the Document Signing experience at /sign',
+          'Check out Smart Notifications at /notifications',
+          'View a Blockchain Certificate at /certificate/abc123'
+        ]}
+      />
     </div>
   );
 }
 
-function InvestmentCard({ investment, featured = false }: { investment: Investment; featured?: boolean }) {
+function InvestmentCard({ investment, featured = false, onClick }: { investment: Investment; featured?: boolean; onClick?: () => void }) {
   const percentRaised = (investment.raised / investment.goal) * 100;
 
   return (
-    <Link href={`/invest/${investment.id}`} className={`investment-card ${featured ? 'featured-card' : ''}`}>
+    <button onClick={onClick} className={`investment-card ${featured ? 'featured-card' : ''}`}>
       <div className="investment-image">
         <div className="image-placeholder">
           <TrendingUp size={48} />
@@ -242,6 +256,6 @@ function InvestmentCard({ investment, featured = false }: { investment: Investme
           <ChevronRight size={18} />
         </div>
       </div>
-    </Link>
+    </button>
   );
 }

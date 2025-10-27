@@ -430,12 +430,18 @@ function CompleteStep({ investmentDetails }: { investmentDetails: any }) {
       </div>
 
       <div className="action-buttons">
-        <a href="/dashboard" className="btn btn-primary btn-large">
-          Go to Dashboard
-        </a>
-        <a href="/certificate/abc123" className="btn btn-outline">
+        <button
+          onClick={() => window.location.href = '/certificate/abc123'}
+          className="btn btn-primary btn-large"
+        >
           View Blockchain Certificate
-        </a>
+        </button>
+        <button
+          onClick={() => window.location.href = '/notifications'}
+          className="btn btn-outline"
+        >
+          View Notifications
+        </button>
       </div>
 
       <div className="next-steps">

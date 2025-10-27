@@ -250,12 +250,12 @@ export default function CertificatePage({ params }: { params: { id: string } }) 
 
         {/* Action Buttons */}
         <div className="bottom-actions">
-          <a href="/dashboard" className="btn btn-primary">
-            Return to Dashboard
-          </a>
-          <a href="/invest" className="btn btn-outline">
+          <button onClick={() => window.location.href = '/invest'} className="btn btn-primary">
             Browse More Opportunities
-          </a>
+          </button>
+          <button onClick={() => window.location.href = '/notifications'} className="btn btn-outline">
+            View Notifications
+          </button>
         </div>
 
         {/* Share Modal */}

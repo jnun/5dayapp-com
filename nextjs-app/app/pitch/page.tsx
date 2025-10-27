@@ -8,16 +8,52 @@ export default function PitchPage() {
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = 15;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Check if already authenticated on mount
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const response = await fetch('/api/auth');
+        const data = await response.json();
+        if (data.authenticated) {
+          setIsUnlocked(true);
+        }
+      } catch (error) {
+        console.error('Auth check failed:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    checkAuth();
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === 'faith2025') {
-      setIsUnlocked(true);
-      setError('');
-    } else {
-      setError('Incorrect password');
+    setError('');
+    setLoading(true);
+
+    try {
+      const response = await fetch('/api/auth', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsUnlocked(true);
+        setPassword('');
+      } else {
+        setError(data.error || 'Incorrect password');
+      }
+    } catch (error) {
+      setError('Authentication failed. Please try again.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -47,6 +83,19 @@ export default function PitchPage() {
     }
   }, [currentSlide, isUnlocked]);
 
+  if (loading && !isUnlocked) {
+    return (
+      <div className="password-gate">
+        <div className="password-container">
+          <div className="lock-icon-wrapper">
+            <Lock size={48} strokeWidth={1.5} />
+          </div>
+          <h1>Loading...</h1>
+        </div>
+      </div>
+    );
+  }
+
   if (!isUnlocked) {
     return (
       <div className="password-gate">
@@ -64,8 +113,11 @@ export default function PitchPage() {
               placeholder="Enter password"
               autoComplete="off"
               required
+              disabled={loading}
             />
-            <button type="submit" className="btn btn-primary">Unlock</button>
+            <button type="submit" className="btn btn-primary" disabled={loading}>
+              {loading ? 'Verifying...' : 'Unlock'}
+            </button>
           </form>
           {error && <div className="error-message">{error}</div>}
         </div>
