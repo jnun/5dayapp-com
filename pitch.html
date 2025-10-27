@@ -228,20 +228,24 @@
                         </div>
                         <div class="flow-steps">
                             <div class="flow-step-item">
-                                <strong>Identity Verification</strong>
-                                <p>Plaid Identity verifies name, DOB, SSN, address against government databases</p>
+                                <strong>Step 1: Express Interest</strong>
+                                <p>Investor signs up for campaign updates; automatically subscribed to email newsletter for ongoing raise communications</p>
                             </div>
                             <div class="flow-step-item">
-                                <strong>Accreditation Check</strong>
-                                <p>Income/net worth verification for accredited investors; enforce RegCF investment limits for non-accredited</p>
+                                <strong>Step 2: Complete KYC</strong>
+                                <p>Plaid Identity verifies name, DOB, SSN, address; AML screening against OFAC/sanctions lists</p>
                             </div>
                             <div class="flow-step-item">
-                                <strong>AML Screening</strong>
-                                <p>Automated screening against OFAC, sanctions lists, PEP databases</p>
+                                <strong>Step 3: Calculate Investment Limit</strong>
+                                <p>System determines max investment allowed based on annual income or net worth per RegCF rules</p>
+                            </div>
+                            <div class="flow-step-item">
+                                <strong>Step 4: Legal Approval</strong>
+                                <p>Compliance team reviews and approves investor profile before investment access is granted</p>
                             </div>
                             <div class="flow-step-item">
                                 <strong>Result</strong>
-                                <p>Approved investor profile with verified identity & investment limits stored encrypted in PostgreSQL</p>
+                                <p>Investor can now invest up to their legally allowed limit in any new opportunity</p>
                             </div>
                         </div>
                     </div>
@@ -278,24 +282,24 @@
                         </div>
                         <div class="flow-steps">
                             <div class="flow-step-item">
-                                <strong>We Never Touch Funds</strong>
-                                <p>Critical: Platform is not a custodian. All funds flow directly to qualified third-party escrow agent</p>
+                                <strong>Step 1: Investment Commitment</strong>
+                                <p>Investor commits funds; ACH transfer authorized via Plaid from verified bank account</p>
                             </div>
                             <div class="flow-step-item">
-                                <strong>ACH via Plaid</strong>
-                                <p>Investor authorizes ACH transfer from verified bank account → Escrow account</p>
+                                <strong>Step 2: Funds to Escrow</strong>
+                                <p>Money flows directly to qualified third-party escrow/bank account (we never touch funds)</p>
                             </div>
                             <div class="flow-step-item">
-                                <strong>Held in Escrow</strong>
-                                <p>Funds held until campaign closes or cancels; if canceled, funds returned automatically</p>
+                                <strong>Step 3: Transaction Tracking</strong>
+                                <p>Platform tracks each investment to specific escrow account; blockchain record created for immutability</p>
                             </div>
                             <div class="flow-step-item">
-                                <strong>Disbursement to Company</strong>
-                                <p>On successful close, escrow agent releases funds to company; we facilitate instructions only</p>
+                                <strong>Step 4: Legal Approval for Disbursement</strong>
+                                <p>Company completes required compliance steps; legal counsel approves fund release conditions</p>
                             </div>
                             <div class="flow-step-item">
-                                <strong>Blockchain Record</strong>
-                                <p>Transaction hash written to Polygon zkEVM for immutable proof of investment</p>
+                                <strong>Step 5: Release or Return</strong>
+                                <p>Campaign success: Escrow releases to company. Campaign canceled: Automatic return to investors</p>
                             </div>
                         </div>
                     </div>
@@ -421,7 +425,7 @@
                             <div class="deployment-bar" style="--percent: 15%"></div>
                             <div class="deployment-details">
                                 <div class="deployment-category">Engineering & Product</div>
-                                <div class="deployment-amount">$230K (15%)</div>
+                                <div class="deployment-amount">$230K-$500K</div>
                                 <div class="deployment-desc">Full-stack platform development (MVP)</div>
                             </div>
                         </div>
@@ -592,13 +596,6 @@
                     <div class="closing-vision">
                         <h3>Our Vision</h3>
                         <p>A world where believers can invest their capital in companies that share their values, and where mission-driven founders have direct access to aligned capital.</p>
-                    </div>
-                    <div class="closing-ask">
-                        <h3>The Ask</h3>
-                        <div class="ask-box">
-                            <p><strong>$1.5M Seed Round</strong></p>
-                            <p>18-month runway to launch, prove model, and position for Series A</p>
-                        </div>
                     </div>
                     <div class="closing-next">
                         <h3>Next Steps</h3>
