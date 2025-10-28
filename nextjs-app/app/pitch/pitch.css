@@ -194,6 +194,69 @@ body {
     font-weight: 500;
 }
 
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    animation: fadeIn 1s ease-out 0.5s backwards;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.scroll-text {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.scroll-arrow {
+    color: var(--primary-color);
+    animation: bounce 2s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(10px);
+        opacity: 0.7;
+    }
+}
+
+.scroll-indicator:hover .scroll-arrow {
+    animation: bounceHover 0.6s ease-in-out infinite;
+}
+
+@keyframes bounceHover {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(15px);
+    }
+}
+
 /* Section Titles */
 .section-title {
     font-size: 2.5rem;
@@ -939,6 +1002,14 @@ body {
         font-size: 1.25rem;
     }
 
+    .scroll-indicator {
+        bottom: 2rem;
+    }
+
+    .scroll-text {
+        font-size: 0.8rem;
+    }
+
     .section-title {
         font-size: 2rem;
         margin-bottom: 2rem;
@@ -1146,6 +1217,401 @@ body {
     background: rgba(59, 130, 246, 0.15);
     color: #1e40af;
     transform: translateX(4px);
+}
+
+/* Infrastructure Architecture Styles */
+.infrastructure-slide {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    color: white;
+}
+
+.infrastructure-slide .section-title {
+    color: white;
+}
+
+.infrastructure-slide .stack-philosophy {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Architecture Layers Diagram */
+.architecture-layers {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 3rem 0;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.architecture-layer {
+    position: relative;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+    border: 2px solid rgba(59, 130, 246, 0.3);
+    border-radius: 12px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: slideInFromLeft 0.6s ease-out backwards;
+}
+
+.architecture-layer:nth-child(1) { animation-delay: 0.1s; }
+.architecture-layer:nth-child(2) { animation-delay: 0.2s; }
+.architecture-layer:nth-child(3) { animation-delay: 0.3s; }
+.architecture-layer:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.architecture-layer:hover {
+    transform: translateX(10px);
+    border-color: rgba(59, 130, 246, 0.6);
+    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.2);
+}
+
+.architecture-layer::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -1.5rem;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 1.5rem;
+    background: linear-gradient(180deg, rgba(59, 130, 246, 0.6) 0%, transparent 100%);
+}
+
+.architecture-layer:last-child::before {
+    display: none;
+}
+
+.layer-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.layer-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(59, 130, 246, 0.2);
+    border-radius: 10px;
+    color: #60a5fa;
+}
+
+.layer-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+.layer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.layer-component {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.layer-component:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+.layer-component strong {
+    color: #60a5fa;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.layer-component span {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Infrastructure Feature Cards */
+.infra-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.infra-feature-card {
+    position: relative;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.infra-feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.infra-feature-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(59, 130, 246, 0.5);
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(59, 130, 246, 0.3);
+}
+
+.infra-feature-card:hover::before {
+    transform: scaleX(1);
+}
+
+.infra-icon {
+    display: inline-flex;
+    padding: 1rem;
+    background: rgba(59, 130, 246, 0.15);
+    border-radius: 12px;
+    color: #60a5fa;
+    margin-bottom: 1.5rem;
+}
+
+.infra-feature-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.infra-feature-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.infra-feature-card li {
+    padding: 0.75rem 0;
+    color: rgba(255, 255, 255, 0.75);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    line-height: 1.6;
+}
+
+.infra-feature-card li:last-child {
+    border-bottom: none;
+}
+
+.infra-feature-card li strong {
+    color: #60a5fa;
+    font-weight: 600;
+}
+
+/* Scaling Timeline */
+.scaling-timeline {
+    position: relative;
+    margin: 3rem 0;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.scaling-timeline h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.timeline-track {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: 2rem 0;
+}
+
+.timeline-track::before {
+    content: '';
+    position: absolute;
+    top: 3rem;
+    left: 12.5%;
+    right: 12.5%;
+    height: 3px;
+    background: linear-gradient(90deg,
+        rgba(59, 130, 246, 0.6) 0%,
+        rgba(59, 130, 246, 0.6) 33%,
+        rgba(139, 92, 246, 0.6) 66%,
+        rgba(139, 92, 246, 0.6) 100%
+    );
+    animation: progressLine 2s ease-out forwards;
+    transform-origin: left;
+}
+
+@keyframes progressLine {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+.timeline-milestone {
+    position: relative;
+    text-align: center;
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.timeline-milestone:nth-child(1) { animation-delay: 0.2s; }
+.timeline-milestone:nth-child(2) { animation-delay: 0.4s; }
+.timeline-milestone:nth-child(3) { animation-delay: 0.6s; }
+.timeline-milestone:nth-child(4) { animation-delay: 0.8s; }
+
+.milestone-marker {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: white;
+    z-index: 2;
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.4);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 16px rgba(59, 130, 246, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 24px rgba(59, 130, 246, 0.6);
+    }
+}
+
+.milestone-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.milestone-cost {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+.milestone-detail {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.4;
+}
+
+/* High Availability Badge */
+.ha-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.25rem 2rem;
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.15) 0%, rgba(59, 130, 246, 0.15) 100%);
+    border: 2px solid rgba(34, 197, 94, 0.3);
+    border-radius: 12px;
+    margin-top: 2rem;
+    transition: all 0.3s ease;
+}
+
+.ha-badge:hover {
+    border-color: rgba(34, 197, 94, 0.6);
+    box-shadow: 0 8px 24px rgba(34, 197, 94, 0.2);
+}
+
+.ha-icon {
+    color: #4ade80;
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.ha-text {
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.ha-details {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+/* Responsive Adjustments for Infrastructure */
+@media (max-width: 768px) {
+    .timeline-track {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .timeline-track::before {
+        left: 2rem;
+        right: auto;
+        top: 4rem;
+        bottom: 4rem;
+        width: 3px;
+        height: auto;
+        background: linear-gradient(180deg,
+            rgba(59, 130, 246, 0.6) 0%,
+            rgba(139, 92, 246, 0.6) 100%
+        );
+    }
+
+    .layer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .architecture-layer:hover {
+        transform: translateX(0);
+    }
 }
 
 /* Reduce motion for accessibility */

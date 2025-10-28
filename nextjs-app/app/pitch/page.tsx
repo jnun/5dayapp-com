@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Lock, Shield, Database, Server, Code, FileText, Users, Zap, CheckCircle, TrendingUp, AlertCircle, GitBranch } from 'lucide-react';
+import { Lock, Shield, Database, Server, Code, FileText, Users, Zap, CheckCircle, TrendingUp, AlertCircle, GitBranch, Cloud, Layers, Key, ChevronDown } from 'lucide-react';
 import './pitch.css';
 
 export default function PitchPage() {
@@ -10,7 +10,7 @@ export default function PitchPage() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 16;
+  const totalSlides = 17;
 
   // Check if already authenticated on mount
   useEffect(() => {
@@ -134,6 +134,22 @@ export default function PitchPage() {
           <p className="cover-subtitle">Faith Powered Equity Crowdfunding Platform</p>
           <div className="cover-meta">
             <span>TECHNICAL BUILD OVERVIEW</span>
+          </div>
+
+          {/* Scroll Indicator */}
+          <div
+            className="scroll-indicator"
+            onClick={() => {
+              const slides = document.querySelectorAll('.slide');
+              if (slides[1]) {
+                slides[1].scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
+          >
+            <div className="scroll-text">Scroll to explore</div>
+            <div className="scroll-arrow">
+              <ChevronDown size={32} strokeWidth={2} />
+            </div>
           </div>
         </div>
       </section>
@@ -321,8 +337,176 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 6: Accelerated Launch Strategy */}
-      <section className="slide">
+      {/* Slide 6: Infrastructure Architecture */}
+      <section className="slide infrastructure-slide">
+        <div className="container">
+          <h2 className="section-title">Infrastructure & Deployment Architecture</h2>
+          <p className="stack-philosophy">&quot;Enterprise-grade infrastructure designed for scale, security, and compliance&quot;</p>
+
+          {/* Visual Architecture Layers Diagram */}
+          <div className="architecture-layers">
+            <div className="architecture-layer">
+              <div className="layer-header">
+                <div className="layer-icon">
+                  <Cloud size={24} strokeWidth={2} />
+                </div>
+                <h3 className="layer-title">CDN & Edge Layer</h3>
+              </div>
+              <div className="layer-content">
+                <div className="layer-component">
+                  <strong>CloudFront CDN</strong>
+                  <span>Global edge caching with DDoS protection and SSL/TLS termination</span>
+                </div>
+                <div className="layer-component">
+                  <strong>AWS WAF</strong>
+                  <span>Web application firewall protecting against SQL injection and XSS attacks</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="architecture-layer">
+              <div className="layer-header">
+                <div className="layer-icon">
+                  <Layers size={24} strokeWidth={2} />
+                </div>
+                <h3 className="layer-title">Application Layer</h3>
+              </div>
+              <div className="layer-content">
+                <div className="layer-component">
+                  <strong>Next.js Frontend</strong>
+                  <span>ECS Fargate containers with auto-scaling (2-20 tasks)</span>
+                </div>
+                <div className="layer-component">
+                  <strong>FastAPI Backend</strong>
+                  <span>Python microservices with WebSocket support for real-time updates</span>
+                </div>
+                <div className="layer-component">
+                  <strong>Application Load Balancer</strong>
+                  <span>Health checks, SSL termination, and traffic distribution</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="architecture-layer">
+              <div className="layer-header">
+                <div className="layer-icon">
+                  <Database size={24} strokeWidth={2} />
+                </div>
+                <h3 className="layer-title">Data Layer</h3>
+              </div>
+              <div className="layer-content">
+                <div className="layer-component">
+                  <strong>PostgreSQL RDS</strong>
+                  <span>Multi-AZ deployment with automated backups and point-in-time recovery</span>
+                </div>
+                <div className="layer-component">
+                  <strong>ElastiCache Redis</strong>
+                  <span>Session management, rate limiting, and caching layer</span>
+                </div>
+                <div className="layer-component">
+                  <strong>S3 Storage</strong>
+                  <span>Document storage with 7-year retention using S3 Glacier</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="architecture-layer">
+              <div className="layer-header">
+                <div className="layer-icon">
+                  <Shield size={24} strokeWidth={2} />
+                </div>
+                <h3 className="layer-title">Security & Integrations</h3>
+              </div>
+              <div className="layer-content">
+                <div className="layer-component">
+                  <strong>Plaid API</strong>
+                  <span>KYC/AML verification and bank account linking</span>
+                </div>
+                <div className="layer-component">
+                  <strong>DocuSign API</strong>
+                  <span>E-signature workflow with audit trails</span>
+                </div>
+                <div className="layer-component">
+                  <strong>Stripe Connect</strong>
+                  <span>Payment processing and platform fees</span>
+                </div>
+                <div className="layer-component">
+                  <strong>Blockchain Ledger</strong>
+                  <span>Immutable investment records and ownership certificates</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Scaling Timeline with Animations */}
+          <div className="scaling-timeline">
+            <h3>Infrastructure Cost Evolution (All Environments)</h3>
+            <p style={{ textAlign: 'center', color: 'rgba(255, 255, 255, 0.7)', fontSize: '1rem', marginBottom: '1rem' }}>
+              Dev + Staging + Production with PCI/SOC 2 compliance
+            </p>
+            <p style={{ textAlign: 'center', color: 'rgba(255, 255, 255, 0.5)', fontSize: '0.85rem', marginBottom: '2rem' }}>
+              Evidence-based AWS pricing (2025) • Includes Multi-AZ RDS, CloudTrail, WAF, 7-year retention
+            </p>
+            <div className="timeline-track">
+              <div className="timeline-milestone">
+                <div className="milestone-marker">1</div>
+                <div className="milestone-label">MVP Launch</div>
+                <div className="milestone-cost">~$1.3-1.5K/mo</div>
+                <div className="milestone-detail">0-10K users<br />3 environments + compliance</div>
+              </div>
+              <div className="timeline-milestone">
+                <div className="milestone-marker">2</div>
+                <div className="milestone-label">Early Growth</div>
+                <div className="milestone-cost">~$2.5-3K/mo</div>
+                <div className="milestone-detail">10K-100K users<br />Horizontal scaling + replicas</div>
+              </div>
+              <div className="timeline-milestone">
+                <div className="milestone-marker">3</div>
+                <div className="milestone-label">Scale Phase</div>
+                <div className="milestone-cost">~$6-8K/mo</div>
+                <div className="milestone-detail">100K-1M users<br />Auto-scaling optimized</div>
+              </div>
+              <div className="timeline-milestone">
+                <div className="milestone-marker">4</div>
+                <div className="milestone-label">High Volume</div>
+                <div className="milestone-cost">$12-15K/mo</div>
+                <div className="milestone-detail">1M+ sustained users<br />Multi-region DR</div>
+              </div>
+            </div>
+            <p style={{ textAlign: 'center', color: 'rgba(255, 255, 255, 0.6)', fontSize: '0.9rem', marginTop: '2rem', fontStyle: 'italic' }}>
+              * Lateral architecture with stateless design prevents exponential cost growth • Transactions are temporary, not sustained
+            </p>
+          </div>
+
+          {/* High Availability Badge */}
+          <div style={{ textAlign: 'center' }}>
+            <div className="ha-badge">
+              <div className="ha-icon">
+                <CheckCircle size={28} strokeWidth={2} />
+              </div>
+              <div>
+                <div className="ha-text">99.9%+ Uptime Guarantee</div>
+                <div className="ha-details">Multi-AZ deployment • Automated failover • RTO: 4 hours, RPO: 15 minutes</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Optional DDoS Protection Note */}
+          <div style={{ marginTop: '2rem', padding: '1.5rem', background: 'rgba(255, 255, 255, 0.03)', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
+            <h4 style={{ fontSize: '1.1rem', fontWeight: '600', color: 'white', marginBottom: '0.75rem' }}>Optional: Advanced DDoS Protection</h4>
+            <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.95rem', lineHeight: '1.6', margin: 0 }}>
+              CloudFlare Enterprise or similar: <strong style={{ color: '#60a5fa' }}>~$40-60K/year</strong> (~$3,333-5,000/month)
+              <br />
+              <span style={{ fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.5)', fontStyle: 'italic' }}>
+                Not required for MVP—AWS Shield Standard + CloudFront WAF provides baseline protection. Add only with high-profile exposure or active threats.
+              </span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Slide 7: Accelerated Launch Strategy */}
+      <section className="slide alt-slide">
         <div className="container">
           <h2 className="section-title">Accelerated Launch Strategy</h2>
           <p className="stack-philosophy">"Leverage Best-in-Class Infrastructure to Ship Faster"</p>
@@ -356,8 +540,8 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 7: Competitive Advantages */}
-      <section className="slide alt-slide">
+      {/* Slide 8: Competitive Advantages */}
+      <section className="slide">
         <div className="container">
           <h2 className="section-title">Our Competitive Advantages</h2>
           <p className="moat-subtitle">Speed + Security + Innovation = Unbeatable Combination</p>
@@ -394,8 +578,8 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 8: Technical Roadmap */}
-      <section className="slide">
+      {/* Slide 9: Technical Roadmap */}
+      <section className="slide alt-slide">
         <div className="container">
           <h2 className="section-title">Technical Roadmap</h2>
           <div className="roadmap">
@@ -432,8 +616,8 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 9: Build Budget */}
-      <section className="slide alt-slide">
+      {/* Slide 10: Build Budget */}
+      <section className="slide">
         <div className="container">
           <h2 className="section-title">MVP Proof of Concept</h2>
           <p className="stack-philosophy">Estimated $300K-$500K for development + infrastructure</p>
@@ -483,8 +667,8 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 10: Build Phases */}
-      <section className="slide">
+      {/* Slide 11: Build Phases */}
+      <section className="slide alt-slide">
         <div className="container">
           <h2 className="section-title">Build Phases</h2>
           <p className="stack-philosophy">Iterative development focused on speed, security, and regulatory readiness</p>
@@ -533,8 +717,8 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 11: Development Approach */}
-      <section className="slide alt-slide">
+      {/* Slide 12: Development Approach */}
+      <section className="slide">
         <div className="container">
           <h2 className="section-title">Development Approach</h2>
           <p className="team-intro">Lean, agile development with strategic use of specialized expertise and external partners.</p>
@@ -560,8 +744,8 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 12: Technical Risk Mitigation */}
-      <section className="slide">
+      {/* Slide 13: Technical Risk Mitigation */}
+      <section className="slide alt-slide">
         <div className="container">
           <h2 className="section-title">Technical Risk Mitigation</h2>
           <div className="risk-grid">
@@ -598,8 +782,8 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 13: Regulation Timelines */}
-      <section className="slide alt-slide">
+      {/* Slide 14: Regulation Timelines */}
+      <section className="slide">
         <div className="container">
           <h2 className="section-title">Regulation Timelines</h2>
           <div className="big-stat">
@@ -650,8 +834,8 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 14: FINRA vs. SOC 2 - Understanding Compliance */}
-      <section className="slide">
+      {/* Slide 15: FINRA vs. SOC 2 - Understanding Compliance */}
+      <section className="slide alt-slide">
         <div className="container">
           <h2 className="section-title">Two Types of Compliance: Legal vs. Technical</h2>
           <p className="stack-philosophy">FINRA is our driver's license. SOC 2 is our vehicle safety report. We need both.</p>
@@ -717,8 +901,8 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 15: Closing */}
-      <section className="slide alt-slide closing-slide">
+      {/* Slide 16: Closing */}
+      <section className="slide closing-slide">
         <div className="container">
           <h2 className="section-title">Why We'll Succeed</h2>
           <div className="closing-content">
@@ -744,7 +928,7 @@ export default function PitchPage() {
       {/* Footer */}
       <footer className="pitch-footer">
         <div className="container">
-          <p className="footer-pages">Use arrow keys or scroll to navigate • 16 slides</p>
+          <p className="footer-pages">Use arrow keys or scroll to navigate • 17 slides</p>
         </div>
       </footer>
     </div>
