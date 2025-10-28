@@ -218,11 +218,6 @@ export default function PitchPage() {
               </div>
             </a>
           </div>
-
-          <div className="solution-box" style={{ marginTop: '2rem', background: 'rgba(59, 130, 246, 0.1)', borderColor: 'rgb(59, 130, 246)' }}>
-            <h3>Production-Quality Interfaces</h3>
-            <p>Click any card above to experience the actual UI. This demonstrates our ability to ship beautiful, functional products fast.</p>
-          </div>
         </div>
       </section>
 
@@ -230,7 +225,6 @@ export default function PitchPage() {
       <section className="slide">
         <div className="container">
           <h2 className="section-title">User Experience First</h2>
-          <p className="stack-philosophy">Simple, intuitive flows that feel like consumer apps—but with enterprise-grade security underneath</p>
           <div className="flow-grid">
             <div className="flow-card">
               <div className="flow-icon">
@@ -272,7 +266,7 @@ export default function PitchPage() {
       <section className="slide alt-slide">
         <div className="container">
           <h2 className="section-title">Strategic Technology Choices</h2>
-          <p className="stack-philosophy">"Battle-tested tools that let us move fast and stay secure"</p>
+          <p className="stack-philosophy">"Battle-tested frameworks that let us move fast and stay secure"</p>
           <div className="tech-stack">
             <div className="tech-layer">
               <div className="tech-icon">
