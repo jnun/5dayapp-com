@@ -27,6 +27,61 @@ export default function Home() {
         </div>
       </header>
 
+      {/* Robot Brain Arrow */}
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: '2rem 0',
+        background: 'linear-gradient(to bottom, transparent, rgba(99, 102, 241, 0.03))'
+      }}>
+        <svg width="120" height="180" viewBox="0 0 120 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Brain/Robot Head */}
+          <g opacity="0.8">
+            {/* Main head circle */}
+            <circle cx="60" cy="40" r="28" stroke="url(#gradient1)" strokeWidth="2" fill="rgba(99, 102, 241, 0.05)"/>
+
+            {/* Brain patterns */}
+            <path d="M 45 35 Q 50 30 55 35" stroke="url(#gradient1)" strokeWidth="1.5" fill="none"/>
+            <path d="M 65 35 Q 70 30 75 35" stroke="url(#gradient1)" strokeWidth="1.5" fill="none"/>
+            <path d="M 42 45 Q 48 42 54 45" stroke="url(#gradient1)" strokeWidth="1.5" fill="none"/>
+            <path d="M 66 45 Q 72 42 78 45" stroke="url(#gradient1)" strokeWidth="1.5" fill="none"/>
+
+            {/* Eyes - robot style */}
+            <circle cx="50" cy="38" r="4" fill="url(#gradient1)"/>
+            <circle cx="70" cy="38" r="4" fill="url(#gradient1)"/>
+
+            {/* Antenna */}
+            <line x1="60" y1="12" x2="60" y2="22" stroke="url(#gradient1)" strokeWidth="2"/>
+            <circle cx="60" cy="10" r="3" fill="url(#gradient1)"/>
+          </g>
+
+          {/* Neck/Connection */}
+          <rect x="56" y="68" width="8" height="12" fill="url(#gradient1)" opacity="0.6"/>
+
+          {/* Arrow Body */}
+          <rect x="56" y="80" width="8" height="60" fill="url(#gradient1)" opacity="0.7"/>
+
+          {/* Arrow Head */}
+          <path d="M 60 155 L 40 135 L 52 135 L 52 140 L 68 140 L 68 135 L 80 135 Z"
+                fill="url(#gradient1)"
+                opacity="0.8"/>
+
+          {/* Gradient Definition */}
+          <defs>
+            <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#6366f1" stopOpacity="0.8"/>
+              <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.6"/>
+            </linearGradient>
+          </defs>
+
+          {/* Animated glow effect */}
+          <circle cx="60" cy="10" r="4" fill="#6366f1" opacity="0.3">
+            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
+          </circle>
+        </svg>
+      </div>
+
       {/* Features Section */}
       <section className="features" id="features">
         <div className="container">
