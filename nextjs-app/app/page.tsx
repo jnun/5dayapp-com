@@ -58,7 +58,7 @@ export default function Home() {
                 <Cpu size={48} strokeWidth={1.5} />
               </div>
               <h3>AI-Augmented Speed</h3>
-              <p>LAI native experts multiply productivity without sacrificing quality. Save time and money on every sprint.</p>
+              <p>AI native experts multiply productivity without sacrificing quality. Save time and money on every sprint.</p>
             </div>
             <div className="feature-card">
               <div className="feature-icon">
