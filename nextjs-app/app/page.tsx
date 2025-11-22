@@ -44,7 +44,7 @@ export default function Home() {
                 <Rocket size={48} strokeWidth={1.5} />
               </div>
               <h3>Battle-Tested Pros</h3>
-              <p>Nimble, experienced developers who have shipped real products. We know what works because we&apos;ve done it.</p>
+              <p>Nimble, experienced engineers who have shipped real products. We know what works because we&apos;ve done it.</p>
             </div>
             <div className="feature-card">
               <div className="feature-icon">
@@ -58,7 +58,7 @@ export default function Home() {
                 <Cpu size={48} strokeWidth={1.5} />
               </div>
               <h3>AI-Augmented Speed</h3>
-              <p>Latest AI tools multiply productivity without sacrificing quality. Save time and money on every sprint.</p>
+              <p>LAI native experts multiply productivity without sacrificing quality. Save time and money on every sprint.</p>
             </div>
             <div className="feature-card">
               <div className="feature-icon">
@@ -90,31 +90,6 @@ export default function Home() {
               <div className="step-number">03</div>
               <h3>Ship Every Friday</h3>
               <p>Weekly demos you can see, test, and share. When the project is done, the team disbands. No bloat. No waste.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Use Cases Section */}
-      <section className="use-cases">
-        <div className="container">
-          <h2 className="section-title">Perfect For</h2>
-          <div className="use-cases-grid">
-            <div className="use-case">
-              <h3>MVPs & Prototypes</h3>
-              <p>Validate your idea before heavy investment</p>
-            </div>
-            <div className="use-case">
-              <h3>Internal Tools</h3>
-              <p>Custom dashboards and automation systems</p>
-            </div>
-            <div className="use-case">
-              <h3>API Integrations</h3>
-              <p>Connect your tools and data sources</p>
-            </div>
-            <div className="use-case">
-              <h3>Mobile & Web Apps</h3>
-              <p>Full-stack applications that scale</p>
             </div>
           </div>
         </div>

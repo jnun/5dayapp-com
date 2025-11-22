@@ -10,7 +10,7 @@ export default function PitchPage() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 17;
+  const totalSlides = 18;
 
   // Check if already authenticated on mount
   useEffect(() => {
@@ -901,7 +901,44 @@ export default function PitchPage() {
         </div>
       </section>
 
-      {/* Slide 16: Closing */}
+      {/* Slide 16: How We Work Together */}
+      <section className="slide">
+        <div className="container">
+          <h2 className="section-title">How We Work Together</h2>
+          <div className="solution-box">
+            <h3>Partnership Model</h3>
+            <p>Clear, straightforward engagement structure designed for focused execution and rapid delivery.</p>
+          </div>
+          <div className="build-details">
+            <div className="build-section">
+              <div className="build-header">
+                <Users size={28} strokeWidth={1.5} />
+                <h3>Core Engagement</h3>
+              </div>
+              <ul className="build-steps">
+                <li><strong>Monthly Retainer:</strong> $15K/month for focused, full-time attention to build the project</li>
+                <li><strong>What This Includes:</strong> Full-stack development, architecture, infrastructure setup, integration management, and technical leadership</li>
+                <li><strong>Timeline Commitment:</strong> Dedicated focus ensuring rapid iteration and consistent progress toward launch</li>
+              </ul>
+            </div>
+            <div className="build-section">
+              <div className="build-header">
+                <Users size={28} strokeWidth={1.5} />
+                <h3>Team Scaling & Advisory</h3>
+              </div>
+              <ul className="build-steps">
+                <li><strong>Additional Labor:</strong> As needed, additional team members employed directly by the entity</li>
+                <li><strong>Hiring Advisory:</strong> Guidance on team structure, role requirements, and technical hiring</li>
+                <li><strong>Payment Setup:</strong> Advisory on establishing payroll, contractor agreements, and payment infrastructure</li>
+                <li><strong>Vendor Management:</strong> Assistance with selecting and managing third-party integrations (Plaid, DocuSign, AWS, etc.)</li>
+              </ul>
+            </div>
+          </div>
+          <p className="slide-note" style={{ marginTop: '2rem' }}><strong>Philosophy:</strong> Lean, efficient execution with strategic scaling—building exactly what's needed, when it's needed.</p>
+        </div>
+      </section>
+
+      {/* Slide 17: Closing */}
       <section className="slide closing-slide">
         <div className="container">
           <h2 className="section-title">Why We'll Succeed</h2>
@@ -928,7 +965,7 @@ export default function PitchPage() {
       {/* Footer */}
       <footer className="pitch-footer">
         <div className="container">
-          <p className="footer-pages">Use arrow keys or scroll to navigate • 17 slides</p>
+          <p className="footer-pages">Use arrow keys or scroll to navigate • 18 slides</p>
         </div>
       </footer>
     </div>
